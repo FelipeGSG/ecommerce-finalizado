@@ -1,0 +1,31 @@
+:root{
+    --corNavEscura: #262636;
+    --alturaHeader: 18vh;
+    --corFundo: #333346;
+    --paddingPadrao: 10px;
+}
+
+*{
+    font-family: sans-serif;
+    color: rgba(208, 212, 216, 0.575);
+    font-weight: 200;
+}
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+}
+html::-webkit-scrollbar-thumb{
+    background-color: var(--corFundo);
+    border-radius: 10px;
+}
+/* html::-webkit-scrollbar{
+    color: #262636;
+    padding: var(--paddingPadrao);
+
+} */
+html::-webkit-scrollbar-track{
+    color: red;
+    background-color: #262636;
+}
