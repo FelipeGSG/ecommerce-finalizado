@@ -5,8 +5,9 @@ body{
     'nav main main main main main main'
     'footer footer footer footer footer footer footer';
     min-height: 100vh;
-    grid-template-rows: 2fr 9fr 2fr;
-    
+    max-width: 100vw;
+    overflow-x: hidden;
+    grid-template-rows: minmax(10vh, 20vh), 9fr, 2fr;
 }
 header{
     grid-area: header;
@@ -18,6 +19,7 @@ main{
     border-top:  1px solid rgba(186, 186, 212, 0.459);
     border-bottom: 1px solid rgba(186, 186, 212, 0.459);
     padding: calc(var(--paddingPadrao)*4) calc(var(--paddingPadrao)*5);
+    /* text-align: justify; */
 
 }
 footer{
@@ -25,7 +27,9 @@ footer{
     grid-area: footer;
     background-color:var(--corFundo);
     border-top:  1px solid rgba(186, 186, 212, 0.459);
-
+    padding: calc(var(--paddingPadrao)*4) calc(var(--paddingPadrao)*3);
+    text-align: justify;
+    display: flex;
 }
 .navegacaoLateral{
     grid-area: nav;
@@ -35,4 +39,28 @@ footer{
     border-right: 1px solid rgba(186, 186, 212, 0.459);
     border-top:  1px solid rgba(186, 186, 212, 0.459);
 
+}
+
+@media (width < 35em) {
+    body{
+        grid-template-areas: 
+        'header header header header header header header'
+        'nav nav nav nav nav nav nav'
+        'main main main main main main main'
+        'footer footer footer footer footer footer footer';
+    }
+    header > .usuario{
+        margin-left: 0px;
+    }
+    .headerItem{
+        width: 60px;
+    }
+
+    .navegacaoLateral{
+        
+        padding: 0px;
+        height: 10vh;
+        display: flex;
+        justify-content: space-around;
+    }
 }
