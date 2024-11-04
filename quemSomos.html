@@ -14,12 +14,14 @@
 </head>
 <body>
     <header>
-        <div class="headerItem configuracao">
+        <div class="headerItem configuracao" 
+            onclick="document.getElementById('div-config').style.display = 'flex';
+            elementoAberto = document.getElementById('div-config')">
             <img class="imagemHeader" src="IMG/configuracao.svg" width="90px" alt="">
-            <h4>configurações</h4>
+            <h4>Configurações</h4>
         </div>
         <div class="headerItem logo">
-            <a href="index.html">
+            <a href="index.html" style="text-decoration: none;">
                 <img class="imagemHeader" src="IMG/logotipo jogos indies (1).png" width="120px" alt="">
                 <h4>GamesIndies</h4>
             </a>
@@ -82,5 +84,19 @@
             <p>Todos os direitos reservados, 2024</p>
         </div>
     </footer>
+
+    <!-- divConfigurações -->
+    <div id="div-config">
+        <h1 
+            onclick="document.getElementById('div-config').style.display = 'none';
+            elementoAberto = 'inicio'">X</h1>
+        <button class="button-config" onclick="mudarContraste()">Alto contraste</button>
+        <button class="button-config">Sem animações</button>
+        <button class="button-config">teste3</button>
+    </div>
+
+
+    <script src="SCRIPTS/geral.js"></script>
+
 </body>
 </html>

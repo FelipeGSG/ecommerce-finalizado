@@ -14,12 +14,14 @@
 </head>
 <body>
     <header>
-        <div class="headerItem configuracao">
+        <div class="headerItem configuracao" 
+            onclick="document.getElementById('div-config').style.display = 'flex';
+            elementoAberto = document.getElementById('div-config')">
             <img class="imagemHeader" src="IMG/configuracao.svg" width="90px" alt="">
-            <h4>configurações</h4>
+            <h4>Configurações</h4>
         </div>
         <div class="headerItem logo">
-            <a href="index.html">
+            <a href="index.html" style="text-decoration: none;">
                 <img class="imagemHeader" src="IMG/logotipo jogos indies (1).png" width="120px" alt="">
                 <h4>GamesIndies</h4>
             </a>
@@ -49,9 +51,9 @@
         <h1>Bem vindo a GamesIndies, usuario!</h1>
         <div class="containerSlide">
             <div id="divTextoPropaganda">
-        <h1 class="textoPropaganda">Diversos jogos em promoção!</h1>
+        <h1 class="textoPropaganda" draggable="false">Diversos jogos em promoção!</h1>
             </div>
-            <div id="slider" >
+            <div class="slider">
                 <img class="imgFundoSlide" draggable="false"  src="IMG/jogos/another_crabs_treasure.png" alt="">
                 <img class="imgFundoSlide" draggable="false" src="IMG/jogos/celeste.png" alt="">
                 <img class="imgFundoSlide" draggable="false" src="IMG/jogos/cuphead.png" alt="">
@@ -81,5 +83,17 @@
             <p>Todos os direitos reservados, 2024</p>
         </div>
     </footer>
+
+    <!-- divConfigurações -->
+    <div id="div-config">
+        <h1 
+            onclick="document.getElementById('div-config').style.display = 'none';
+            elementoAberto = 'inicio'">X</h1>
+        <button class="button-config" onclick="mudarContraste()">Alto contraste</button>
+        <button class="button-config">Sem animações</button>
+        <button class="button-config">teste3</button>
+    </div>
+
+    <script src="SCRIPTS/geral.js"></script>
 </body>
 </html>

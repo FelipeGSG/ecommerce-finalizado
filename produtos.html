@@ -14,12 +14,14 @@
 </head>
 <body>
     <header>
-        <div class="headerItem configuracao">
+        <div class="headerItem configuracao" 
+            onclick="document.getElementById('div-config').style.display = 'flex';
+            elementoAberto = document.getElementById('div-config')">
             <img class="imagemHeader" src="IMG/configuracao.svg" width="90px" alt="">
-            <h4>configurações</h4>
+            <h4>Configurações</h4>
         </div>
         <div class="headerItem logo">
-            <a href="index.html">
+            <a href="index.html" style="text-decoration: none;">
                 <img class="imagemHeader" src="IMG/logotipo jogos indies (1).png" width="120px" alt="">
                 <h4>GamesIndies</h4>
             </a>
@@ -50,98 +52,136 @@
         <div class="geral">
             <h1>Mais jogados</h1>
             <div class="container1">
-                <div onclick="buscar(13)" class="produto produto-parte1">
+                <div onclick="buscar(13); elementoAberto = document.getElementById('backgroundPopUpProduto')" class="produto produto-parte1">
                     <div class="informacaoTexto">
                         <h2>Stardew Valley</h2>
-                        <h4>PRECO DO JOGO &nbsp;&nbsp;&nbsp; <span>mini estrelas</span></h4>
+                        <h4>R$24,99 &nbsp;&nbsp;&nbsp; <span>4,6
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela_metade.png" width="14px" alt="">
+                        </span></h4>
                     </div>
                 </div>
                 
-                <div onclick="buscar(11)" class="produto produto-parte1">
+                <div onclick="buscar(11); elementoAberto = document.getElementById('backgroundPopUpProduto')" class="produto produto-parte1">
                     <div class="informacaoTexto">
-                        <h2>NOME DO JOGO</h2>
-                        <h4>PRECO DO JOGO &nbsp;&nbsp;&nbsp; <span>mini estrelas</span></h4>
+                        <h2>Plants vs Zombies</h2>
+                        <h4>R$14,99 &nbsp;&nbsp;&nbsp; <span>4,5
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela_metade.png" width="14px" alt="">
+                        </span></h4>
                     </div>
                 </div>
-                <div onclick="buscar(15)" class="produto produto-parte1">
+                <div onclick="buscar(15); elementoAberto = document.getElementById('backgroundPopUpProduto')" class="produto produto-parte1">
                     <div class="informacaoTexto">
-                        <h2>NOME DO JOGO</h2>
-                        <h4>PRECO DO JOGO &nbsp;&nbsp;&nbsp; <span>mini estrelas</span></h4>
+                        <h2>The Binding Of Isaac</Table></h2>
+                        <h4>R$36,99 &nbsp;&nbsp;&nbsp; <span>4,6 
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela_metade.png" width="14px" alt="">
+                        </span></h4>
                     </div>
                 </div>
-                <div onclick="buscar(16)" class="produto produto-parte1">
+                <div onclick="buscar(16); elementoAberto = document.getElementById('backgroundPopUpProduto')" class="produto produto-parte1">
                     <div class="informacaoTexto">
-                        <h2>NOME DO JOGO</h2>
-                        <h4>PRECO DO JOGO &nbsp;&nbsp;&nbsp; <span>mini estrelas</span></h4>
+                        <h2>Undertale</h2>
+                        <h4>R$19,99 &nbsp;&nbsp;&nbsp; <span>4,7 
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela_metade.png" width="14px" alt="">
+                        </span></h4>
                     </div>
                 </div>
-                <div onclick="buscar(3)" class="produto produto-parte1">
+                <div onclick="buscar(3); elementoAberto = document.getElementById('backgroundPopUpProduto')" class="produto produto-parte1">
                     <div class="informacaoTexto">
-                        <h2>NOME DO JOGO</h2>
-                        <h4>PRECO DO JOGO &nbsp;&nbsp;&nbsp; <span>mini estrelas</span></h4>
+                        <h2>Cuphead</h2>
+                        <h4>R$29,99 &nbsp;&nbsp;&nbsp; <span>4,6
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela_metade.png" width="14px" alt="">
+                        </span></h4>
                     </div>
                 </div>
             </div>
-            <br><br>
-            <br><br>
-            <br><br>
-            <br><br>
     
             <h1>Mais recentes</h1>
             <div class="container2">
-                <div class="produto produto-parte2">
+                <div onclick="buscar(12); elementoAberto = document.getElementById('backgroundPopUpProduto')" class="produto produto-parte2">
                     <div class="informacaoTexto">
-                        <h2>NOME DO JOGO</h2>
-                        <h4>PRECO DO JOGO &nbsp;&nbsp;&nbsp; <span>mini estrelas</span></h4>
+                        <h2>Sea of Stars</h2>
+                        <h4>R$149,99 &nbsp;&nbsp;&nbsp; <span>4,6
+                             <img src="IMG/estrela.png" width="14px" alt="">
+                             <img src="IMG/estrela.png" width="14px" alt="">
+                             <img src="IMG/estrela.png" width="14px" alt="">
+                             <img src="IMG/estrela.png" width="14px" alt="">
+                             <img src="IMG/estrela_metade.png" width="14px" alt="">
+                            </span></h4>
                     </div>
                 </div>
-                <div class="produto produto-parte2">
+                <div onclick="buscar(14); elementoAberto = document.getElementById('backgroundPopUpProduto')" class="produto produto-parte2">
                     <div class="informacaoTexto">
-                        <h2>NOME DO JOGO</h2>
-                        <h4>PRECO DO JOGO &nbsp;&nbsp;&nbsp; <span>mini estrelas</span></h4>
+                        <h2>Stray</h2>
+                        <h4>R$95,99 &nbsp;&nbsp;&nbsp; <span>4,3 
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela_metade.png" width="14px" alt="">
+                        </span></h4>
                     </div>
                 </div>
-                <div class="produto produto-parte2">
+                <div onclick="buscar(9); elementoAberto = document.getElementById('backgroundPopUpProduto')" class="produto produto-parte2">
                     <div class="informacaoTexto">
-                        <h2>NOME DO JOGO</h2>
-                        <h4>PRECO DO JOGO &nbsp;&nbsp;&nbsp; <span>mini estrelas</span></h4>
+                        <h2>Inscryption</h2>
+                        <h4>R$45,99 &nbsp;&nbsp;&nbsp; <span>4,5
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela_metade.png" width="14px" alt="">
+                        </span></h4>
                     </div>
                 </div>
-                <div class="produto produto-parte2">
+                <div onclick="buscar(4); elementoAberto = document.getElementById('backgroundPopUpProduto')" class="produto produto-parte2">
                     <div class="informacaoTexto">
-                        <h2>NOME DO JOGO</h2>
-                        <h4>PRECO DO JOGO &nbsp;&nbsp;&nbsp; <span>mini estrelas</span></h4>
+                        <h2>Dead Cells</h2>
+                        <h4>R$49,99 &nbsp;&nbsp;&nbsp; <span>4,7
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela_metade.png" width="14px" alt="">
+                        </span></h4>
                     </div>
                 </div>
-                <div class="produto produto-parte2">
+                <div onclick="buscar(2); elementoAberto = document.getElementById('backgroundPopUpProduto')" class="produto produto-parte2">
                     <div class="informacaoTexto">
-                        <h2>NOME DO JOGO</h2>
-                        <h4>PRECO DO JOGO &nbsp;&nbsp;&nbsp; <span>mini estrelas</span></h4>
+                        <h2>Celeste</h2>
+                        <h4>R$24,99 &nbsp;&nbsp;&nbsp; <span>4,9
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela.png" width="14px" alt="">
+                            <img src="IMG/estrela_metade.png" width="14px" alt="">
+                        </span></h4>
                     </div>
                 </div>
             </div>
         </div>
         <br><br>
     </main>
-    <!-- tela do jogo clicado -->
-    <div id="backgroundPopUpProduto">
-        <div id="popUpProduto">
-            <h1 onclick="document.getElementById('backgroundPopUpProduto').style.display = 'none'">X</h1>
-            <img id="imagemJogo" src="" alt="">
-            <div>
-                <h1 id="nomeJogo">NOME DO JOGO</h1>
-                <span id="dataLancamentoJogo">DATA DE LANÇAMENTO &nbsp;&nbsp; &nbsp;  </span>
-                <span id="avaliacaoJogo">AVALIAÇÃO</span> 
-                <br><br>
-                <h3>R$<span id="precoJogo">0</span></h3>
-                <br>
-                <input type="checkbox" name="" id="isListaDesejo">
-                <label for="">Adicionar a lista de desejos</label><br>
-                <button id="comprarJogo">Comprar</button>
-            </div>
-        </div>        
-    </div>
-    <!-- fim da tela do jogo clicado -->
+
     <footer>
         <div>
             <h3>Desenvolvido por:</h3>
@@ -157,82 +197,40 @@
         </div>
     </footer>
 
+    <!-- divConfigurações -->
+    <div id="div-config">
+        <h1 
+            onclick="document.getElementById('div-config').style.display = 'none';
+            elementoAberto = 'inicio'">X</h1>
+        <button class="button-config" onclick="mudarContraste()">Alto contraste</button>
+        <button class="button-config">Sem animações</button>
+        <button class="button-config">teste3</button>
+    </div>
 
-    <script src="script.js"></script>
+    <!-- tela do jogo clicado -->
+    <div id="backgroundPopUpProduto">
+        <div id="popUpProduto">
+            <h1 id="fechar" onclick="document.getElementById('backgroundPopUpProduto').style.display = 'none'; salvarDesejos(0)">X</h1>
+            <div id="container-jogo">
+                <img id="imagemJogo" src="" alt="">
+                <div>
+                    <h1 id="nomeJogo">NOME DO JOGO</h1>
+                    <span id="dataLancamentoJogo">DATA DE LANÇAMENTO &nbsp;&nbsp; &nbsp;  </span>
+                    <span id="avaliacaoJogo">AVALIAÇÃO</span> 
+                    <br><br>
+                    <h3>R$<span id="precoJogo">0</span></h3>
+                    <br>
+                    <input type="checkbox" name="" id="adicionarDesejo">
+                    <label for="">Adicionar a lista de desejos</label><br>
+                    <button id="comprarJogo">Comprar</button>
+                </div>
+            </div>
+        </div>        
+    </div>
+    <!-- fim da tela do jogo clicado -->
 
-    <!-- <style>
-        body {
-    font-family: Arial, sans-serif;
-}
-
-.open-popup-btn {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-}
-
-.popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-}
-
-.popup-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    position: relative;
-    width: 300px;
-    text-align: center;
-}
-
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-    </style>
-    
-    <script>
-        // Obtendo os elementos
-const popup = document.getElementById('popup');
-const openPopupBtn = document.getElementById('open-popup-btn');
-const closeBtn = document.getElementById('close-btn');
-
-// Abrir popup ao clicar no botão
-openPopupBtn.addEventListener('click', function() {
-    popup.style.display = 'flex';
-});
-
-// Fechar popup ao clicar no botão de fechar
-closeBtn.addEventListener('click', function() {
-    popup.style.display = 'none';
-});
-
-// Fechar popup ao clicar fora do conteúdo do popup
-window.addEventListener('click', function(event) {
-    if (event.target === popup) {
-        popup.style.display = 'none';
-    }
-});
-
-    </script> -->
-
-    <script src="SCRIPTS/produto.js"></script>
+    <!-- <script src="script.js"></script> -->
+    <script src="SCRIPTS/geral.js"></script>
+   <script src="SCRIPTS/produto.js"></script>
 </body>
 </html>

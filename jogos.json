@@ -4,6 +4,7 @@
         "nome": "Another Crabs Treasure",
         "data_lancamento": "______",
         "avaliacao": "4.0",
+        "preco": 74.95,
         "imagem": "IMG/jogos/another_crabs_treasure.png"
     },
     {
@@ -11,6 +12,7 @@
         "nome": "Celeste",
         "data_lancamento": "25/01/2018",
         "avaliacao": "4.9",
+        "preco": 24.99,
         "imagem": "IMG/jogos/celeste.png"
     },
     {
@@ -18,6 +20,7 @@
         "nome": "Cuphead",
         "data_lancamento": "29/09/2017",
         "avaliacao": "4.6",
+        "preco": 29.99,
         "imagem": "IMG/jogos/cuphead.png"
     },
     {
@@ -25,6 +28,7 @@
         "nome": "Dead Cells",
         "data_lancamento": "06/08/2018",
         "avaliacao": "4.7",
+        "preco": 49.99,
         "imagem": "IMG/jogos/dead_cells.png"
     },
     {
@@ -32,6 +36,7 @@
         "nome": "FEZ",
         "data_lancamento": "13/04/2012",
         "avaliacao": "4.1",
+        "preco": 10.89,
         "imagem": "IMG/jogos/fez.png"
     },
     {
@@ -39,6 +44,7 @@
         "nome": "Hades II",
         "data_lancamento": "______",
         "avaliacao": "5.0",
+        "preco": null,
         "imagem": "IMG/jogos/hades2.png"
     },
     {
@@ -46,6 +52,7 @@
         "nome": "Hollow Knight",
         "data_lancamento": "24/02/2017",
         "avaliacao": "4.8",
+        "preco": 27.99,
         "imagem": "IMG/jogos/hollow_knight.png"
     },
     {
@@ -53,6 +60,7 @@
         "nome": "Hue",
         "data_lancamento": "30/08/2016",
         "avaliacao": "4.0",
+        "preco": 11.99,
         "imagem": "IMG/jogos/hue.png"
     },
     {
@@ -60,6 +68,7 @@
         "nome": "Inscryption",
         "data_lancamento": "19/10/2021",
         "avaliacao": "4.5",
+        "preco": 45.99,
         "imagem": "IMG/jogos/inscryption.png"
     },
     {
@@ -67,6 +76,7 @@
         "nome": "Kerbal Space Program",
         "data_lancamento": "27/04/2015",
         "avaliacao": "4.3",
+        "preco": 79.99,
         "imagem": "IMG/jogos/kerbal_space_program.png"
     },
     {
@@ -74,6 +84,7 @@
         "nome": "Plants vs Zombies",
         "data_lancamento": "05/05/2009",
         "avaliacao": "4.5",
+        "preco": 14.99,
         "imagem": "IMG/jogos/pvz.png"
     },
     {
@@ -81,6 +92,7 @@
         "nome": "Sea Of Stars",
         "data_lancamento": "29/08/2023",
         "avaliacao": "4.6",
+        "preco": 149.00,
         "imagem": "IMG/jogos/sea_of_stars.png"
     },
     {
@@ -88,6 +100,7 @@
         "nome": "Stardew Valley",
         "data_lancamento": "26/02/2016",
         "avaliacao": "4.8",
+        "preco": 24.99,
         "imagem": "IMG/jogos/stardew_valley.png"
     },
     {
@@ -95,6 +108,7 @@
         "nome": "Stray",
         "data_lancamento": "19/07/2022",
         "avaliacao": "4.3",
+        "preco": 95.99,
         "imagem": "IMG/jogos/stray.png"
     },
     {
@@ -102,6 +116,7 @@
         "nome": "The Binding Of Isaac",
         "data_lancamento": "28/09/2011",
         "avaliacao": "4.6",
+        "preco": 36.99,
         "imagem": "IMG/jogos/the_binding_of_isaac.png"
     },
     {
@@ -109,6 +124,7 @@
         "nome": "Undertale",
         "data_lancamento": "15/09/2015",
         "avaliacao": "4.7",
+        "preco": 19.99,
         "imagem": "IMG/jogos/undertale.png"
     },
     {
@@ -116,6 +132,7 @@
         "nome": "Unravel",
         "data_lancamento": "09/02/2016",
         "avaliacao": "4.2",
+        "preco": 39.99,
         "imagem": "IMG/jogos/unreavel.png"
     }
 ]

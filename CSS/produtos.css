@@ -4,9 +4,7 @@ body{
     min-height: 100vh;
     max-width: 100vw;
 }
-/* header{
-    max-width: 100vw;
-} */
+
 aside{
     display: flex;
     justify-content: space-around;
@@ -30,6 +28,11 @@ main{
         background-color: var(--corNavEscura);
         width: 75vw;
         padding: 2.5rem;
+        scrollbar-color:  rgb(70, 70, 105) rgb(26, 26, 54);
+    }
+
+    .container1{
+        margin-bottom: 150px;
     }
 
         .informacaoTexto{
@@ -39,6 +42,12 @@ main{
             text-align: center;
             transition: 0.4s;
         }
+            .informacaoTexto * {
+                color: aliceblue;
+            }
+            .informacaoTexto img{
+                filter: brightness(1.8);
+            }
         .produto{
             background-color: rgb(0, 0, 0);
             min-width: 400px;
@@ -80,53 +89,96 @@ main{
 
 
         /* container 2 */
-        .produto:nth-child(){
-
+        .produto-parte2:nth-child(1){
+            background-image: url(../IMG/jogos/sea_of_stars.png);
         }
-        .produto:nth-child(){
-
+        .produto-parte2:nth-child(2){
+            background-image: url(../IMG/jogos/stray.png);
         }
-        .produto:nth-child(){
-
+        .produto-parte2:nth-child(3){
+            background-image: url(../IMG/jogos/inscryption.png);
         }
-        .produto:nth-child(){
-
+        .produto-parte2:nth-child(4){ 
+            background-image: url(../IMG/jogos/dead_cells.png);
         }
-        .produto:nth-child(){
-
+        .produto-parte2:nth-child(5){
+            background-image: url(../IMG/jogos/celeste.png);
         }
         
 
 #backgroundPopUpProduto{
     display: flex;
-    display: none;
+    /* display: none; */
     background-color: rgba(0, 0, 0, 0.479);
-    position: absolute;
+    position: fixed;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    height: 100%;
     width: 100%;
-    z-index: 3;
-    padding: 0;
-    box-sizing: border-box;
 }
+
     #popUpProduto{
         padding: 2rem;
         border-radius: 5%;
         background-color: #262636dc;
+        display: flex;
+        flex-direction: column;
     }
         #popUpProduto *{
             color: aliceblue;
-            text-align: start;
+            /* text-align: start; */
         }
-
-
-
-
+        #popUpProduto img{
+            min-width: 400px;
+            min-height: 500px;
+            border-radius: 10px;
+        }
+    #container-jogo{
+        display: flex;
+        gap: 5%;
+    }
+    #fechar{
+        padding: 0px ;
+        margin-left: auto;
+        text-align: end;
+        cursor: pointer;
+    }
+        #comprarJogo{
+            background-color: var(--corNavEscura);
+            filter: brightness(1.3);
+            padding: 10px 5px;
+            border: 0;
+            border-radius: 5px;
+            width: 90%;
+            font-size: 24px;
+            transition: 0.4s;
+            text-align: center;
+            margin-top: 100%;
+            box-sizing: border-box;
+        }
+            #comprarJogo:hover{
+                filter: drop-shadow(0px 0px 1px white);
+            }
         
-@media (max-width < 50rem) {
+@media (width < 50rem) {
     header{
         display: flex;
         flex-direction: column;
+    }
+    #popUpProduto{
+        align-items: center;
+        justify-content: center;
+        height: fit-content;
+        overflow: scroll;
+    }
+    #popUpProduto img{
+        width: 350px;
+    }
+    #container-jogo{
+        flex-direction: column;
+    }
+    #comprarJogo{
+        margin-top: 5%;
     }
 }
