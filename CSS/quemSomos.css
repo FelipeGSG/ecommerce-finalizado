@@ -6,3 +6,43 @@ aside{
         display: flex;
         justify-content: center;
     }
+
+.divFundoCadastro{
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    max-width: 550px;
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    background-color: var(--corNavEscura);
+    border-radius: 10px;
+    font-size: 1.4em;
+}
+    .divFundoCadastro input{
+        width: 70%;
+        padding: 8px 6px;
+        border: 1px solid gray;
+        border-radius: 8px;
+    }
+        .divFundoCadastro input:focus{
+            color: black;
+        }
+    #send-register{
+        width: 70%;
+        padding: 10px;
+        margin-bottom: 20px;
+        font-size: 1.2em;
+        color: var(--corSemHover);
+        background-color: var(--corNavEscura);
+        filter: brightness(0.8);
+        border: 1px solid gray;
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+    #send-register:hover{
+        filter: brightness(1.3);
+    }

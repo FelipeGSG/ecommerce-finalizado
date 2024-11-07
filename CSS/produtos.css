@@ -108,7 +108,7 @@ main{
 
 #backgroundPopUpProduto{
     display: flex;
-    /* display: none; */
+    display: none;
     background-color: rgba(0, 0, 0, 0.479);
     position: fixed;
     align-items: center;

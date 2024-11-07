@@ -26,9 +26,10 @@
                 <h4>GamesIndies</h4>
             </a>
         </div>
-        <div class="headerItem usuario">
+        <div class="headerItem usuario" 
+            onclick="toggleDivUser()">
             <img class="imagemHeader" src="IMG/usuario.svg" width="120px" alt="">
-            <h4>Usuário</h4>
+            <h4 id="nomeUsuario">Usuário</h4>
         </div>
         
     </header>
@@ -51,24 +52,25 @@
     <main>
         <h1>Bem vindo a GamesIndies, usuario!</h1>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam architecto, nemo quia eum ea quos sequi incidunt tempore amet dolores minus quam accusantium ad quis consequatur, totam ut. Nemo, molestias!
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam architecto, nemo quia eum  eum ea quos sequi incidunt tempore amet dolores minus quam accusantium ad quis consequatur, totam ut. Nemo, molestias!
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam architecto, nemo quia eum ea quos sequi incidunt tempore amet dolores minus quam accusantium ad quis consequatur, totam ut. Nemo, molestias!
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam architecto, nemo quia eum ea quos sequi incidunt tempore amet dolores minus quam accusantium ad quis consequatur, totam ut. Nemo, molestias!
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam architecto, nemo quia eum ea quos sequi incidunt tempore amet dolores minus quam accusantium ad quis consequatur, totam ut. Nemo, molestias!
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam architecto, nemo quia eum ea quos sequi incidunt tempore amet dolores minus quam accusantium ad quis consequatur, totam ut. Nemo, molestias!
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam architecto, nemo quia eum ea quos sequi incidunt tempore amet dolores minus quam accusantium ad quis consequatur, totam ut. Nemo, molestias!
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam architecto, nemo quia eum ea quos sequi incidunt tempore amet dolores minus quam accusantium ad quis consequatur, totam ut. Nemo, molestias!
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam architecto, nemo quia eum ea quos sequi incidunt tempore amet dolores minus quam accusantium ad quis consequatur, totam ut. Nemo, molestias!
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam architecto, nemo quia eum ea quos sequi incidunt tempore amet dolores minus quam accusantium ad quis consequatur, totam ut. Nemo, molestias!
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam architecto, nemo quia eum ea quos sequi incidunt tempore amet dolores minus quam accusantium ad quis consequatur, totam ut. Nemo, molestias!
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam architecto, nemo quia eum ea quos sequi incidunt tempore amet dolores minus quam accusantium ad quis consequatur, totam ut. Nemo, molestias!
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam architecto, nemo quia eum ea quos sequi incidunt tempore amet dolores minus quam accusantium ad quis consequatur, totam ut. Nemo, molestias!
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam architecto, nemo quia eum ea quos sequi incidunt tempore amet dolores minus quam accusantium ad quis consequatur, totam ut. Nemo, molestias!
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam architecto, nemo quia eum ea quos sequi incidunt tempore amet dolores minus quam accusantium ad quis consequatur, totam ut. Nemo, molestias!
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam architecto, nemo quia eum ea quos sequi incidunt tempore amet dolores minus quam accusantium ad quis consequatur, totam ut. Nemo, molestias!
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam architecto, nemo quia eum ea quos sequi incidunt tempore amet dolores minus quam accusantium ad quis consequatur, totam ut. Nemo, molestias!
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam architecto, nemo quia eum ea quos sequi incidunt tempore amet dolores minus quam accusantium ad quis consequatur, totam ut. Nemo, molestias!
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam architecto, nemo quia eum ea quos sequi incidunt tempore amet dolores minus quam accusantium ad quis consequatur, totam ut. Nemo, molestias!
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam architecto, nemo quia eum ea quos sequi incidunt tempore amet dolores minus quam accusantium ad quis consequatur, totam ut. Nemo, molestias!
+
+        <div class="divFundoCadastro">
+            <h2>Cadastre-se!</h2>
+            <br>
+            <label for="login-nome-input"> Nome &nbsp; <sup>*obrigatório</sup></label> 
+            <input class="inputs-cadastro" type="text" name="" id="login-nome-input" placeholder="Digite seu nome de usuário">
+            <br><br>
+            <label for="login-email-input"> Email &nbsp; </label> 
+            <input class="inputs-cadastro" type="email" name="" id="login-email-input" placeholder="Digite seu email">
+            <br><br>
+            <label for="login-senha-input"> Senha &nbsp; <sup>*obrigatório</sup> </label> 
+            <input class="inputs-cadastro" type="password" name="" id="login-senha-input" placeholder="Digite sua senha">
+            <br><br>
+            <button id="send-register" onclick="cadastrar()">Enviar</button>
+            
+        </div>
     </main>
     <footer>
         <div>
@@ -93,6 +95,14 @@
         <button class="button-config" onclick="mudarContraste()">Alto contraste</button>
         <button class="button-config">Sem animações</button>
         <button class="button-config">teste3</button>
+    </div>
+
+    <!-- divUsuario -->
+    <div id="div-user">
+        <h2 id="displayNomeUsuario">você não deveria estar lendo isso</h2>
+        <h3 id="displayEmail">pelo jeito você não inseriu um email... tudo bem! :&rpar;</h3>
+        <button id="buttonLogarSair" onclick="botaoSairLogar()">Sair</button>
+        <button onclick="toggleDivUser()">Sair</button>
     </div>
 
 

@@ -1,10 +1,68 @@
-// localStorage.setItem("logado", false)
+if(localStorage.getItem("logado") == null){
+    localStorage.setItem("logado", false)
+}
+
+function displayUsuario(){
+    const displayNome = document.getElementById("displayNomeUsuario")
+    const displayEmail = document.getElementById("displayEmail")
+    const button = document.getElementById("buttonLogarSair")
+    
+    if(localStorage.getItem("logado") == "false"){
+        displayNome.innerHTML = "Usuário"
+        displayEmail.innerHTML = "Sem email definido"
+        button.innerHTML = "Logar"
+    } else if(localStorage.getItem("logado") == "true"){
+        displayNome.innerHTML = localStorage.getItem("nome")
+        if(localStorage.getItem("email") != null){
+            displayEmail.innerHTML = localStorage.getItem("email")
+        } else{
+            displayEmail.innerHTML = "Oops! você não inseriu um email!"
+        }
+        button.innerHTML = "Sair"
+    }
+}
+
+function botaoSairLogar(){
+    if(localStorage.getItem("logado") == "false"){
+        window.location.href = "quemSomos.html"
+    } else{
+        sairConta()
+    }
+}
+ displayUsuario()
+// -------------------------------------------------------
+
+function carregarConta(){
+    if(localStorage.getItem("logado") != "false"){
+        document.getElementById("nomeUsuario").innerHTML = localStorage.getItem("nome")
+    }
+}
+
+function cadastrar(){
+    var nome = document.getElementById("login-nome-input").value
+    var email = document.getElementById("login-email-input").value
+    var senha = document.getElementById("login-senha-input").value
+
+    localStorage.setItem("nome", nome)
+    localStorage.setItem("email", email)
+    localStorage.setItem("logado", true)
+
+    carregarConta()
+}
+
+carregarConta()
+
+function sairConta(){
+    localStorage.setItem("logado", false)
+    carregarConta()
+}
+
 // -------------------------------------------------------
 var elementoAberto = "inicio"
 
 document.body.addEventListener("keyup", (event, elemento) =>{
     elemento = elementoAberto
-    console.log(event.key)
+    // console.log(event.key)
     if(event.key === "Escape" && elementoAberto == "inicio"){
         window.location.href = "index.html"
     } else if(event.key === "Escape" && elementoAberto != "inicio"){
@@ -45,3 +103,17 @@ function mudarElementosContraste(){
     }
 } 
 // -------------------------------------------------------
+var divUserAberta = false
+
+function toggleDivUser(){
+    divUserAberta = !divUserAberta
+
+    if(divUserAberta == true){
+        document.getElementById("div-user").style.display = "block"
+        document.getElementById("div-user").style.right = "0px"
+    } else{
+        elementoAberto =  document.getElementById("div-user")
+        document.getElementById("div-user").style.right = "-500px"
+
+    }
+}
