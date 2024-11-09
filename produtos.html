@@ -15,7 +15,7 @@
 <body>
     <header>
         <div class="headerItem configuracao" 
-            onclick="document.getElementById('div-config').style.display = 'flex';
+            onclick="document.getElementById('div-config').style.display = 'flex'; 
             elementoAberto = document.getElementById('div-config')">
             <img class="imagemHeader" src="IMG/configuracao.svg" width="90px" alt="">
             <h4>Configurações</h4>
@@ -45,6 +45,12 @@
             <a class="ancora" href="quemSomos.html">
                 <img class="iconeAncora" src="IMG/iconeQuemSomos.svg" alt="">
                 <h3>Quem somos</h3>
+            </a>
+        </div>
+        <div class="opcao">
+            <a class="ancora" onclick="document.getElementById('listaDeDesejos').style.display = 'flex';elementoAberto.style.display = 'none'; elementoAberto = document.getElementById('listaDeDesejos')">
+                <img class="iconeAncora" src="IMG/iconeListaDesejos.svg" alt="">
+                <h3>Lista de desejos</h3>
             </a>
         </div>
     </aside>
@@ -204,23 +210,25 @@
             onclick="document.getElementById('div-config').style.display = 'none';
             elementoAberto = 'inicio'">X</h1>
         <button class="button-config" onclick="mudarContraste()">Alto contraste</button>
-        <button class="button-config">Sem animações</button>
-        <button class="button-config">teste3</button>
+        <button class="button-config" onclick="toggleAnimacao()">Sem animações</button>
+        <button class="button-config" onclick="toggleBlur()">Blur ativado</button>
     </div>
 
+
+    <!-- divUsuario -->
     <!-- divUsuario -->
     <div id="div-user">
         <h2 id="displayNomeUsuario">você não deveria estar lendo isso</h2>
         <h3 id="displayEmail">pelo jeito você não inseriu um email... tudo bem! :&rpar;</h3>
-        <button id="buttonLogarSair" onclick="botaoSairLogar()">Sair</button>
-        <button onclick="toggleDivUser()">Sair</button>
+        <button id="buttonLogarSair" onclick="botaoSairLogar()">oxente?</button>
+        <button id="buttonFechar" onclick="toggleDivUser()">Fechar</button>
     </div>
-    
+
 
     <!-- tela do jogo clicado -->
     <div id="backgroundPopUpProduto">
         <div id="popUpProduto">
-            <h1 id="fechar" onclick="document.getElementById('backgroundPopUpProduto').style.display = 'none'; salvarDesejos(0)">X</h1>
+            <h1 id="fechar" onclick="document.getElementById('backgroundPopUpProduto').style.display = 'none'; salvarDesejos(idJogoJson)">X</h1>
             <div id="container-jogo">
                 <img id="imagemJogo" src="" alt="">
                 <div>
@@ -230,7 +238,7 @@
                     <br><br>
                     <h3>R$<span id="precoJogo">0</span></h3>
                     <br>
-                    <input type="checkbox" name="" id="adicionarDesejo">
+                    <input type="checkbox" name="listaDeDesejos" id="adicionarDesejo">
                     <label for="">Adicionar a lista de desejos</label><br>
                     <button id="comprarJogo">Comprar</button>
                 </div>
@@ -239,10 +247,22 @@
     </div>
     <!-- fim da tela do jogo clicado -->
 
-    
+    <div id="listaDeDesejos">
+        <h1 onclick="document.getElementById('listaDeDesejos').style.display = 'none';">X</h1>
+        <table id="tabelaListaDesejos" >
+            <thead>
+                <tr>
+                    <th>
+                        <h1>Lista de desejos</h1>
+                    </th>
+                </tr>
+            </thead>
+        </table>
+    </div>
 
     <!-- <script src="script.js"></script> -->
     <script src="SCRIPTS/geral.js"></script>
    <script src="SCRIPTS/produto.js"></script>
+   <script src="SCRIPTS/listaDeDesejos.js"></script>
 </body>
 </html>

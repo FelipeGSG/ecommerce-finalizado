@@ -91,18 +91,19 @@
             onclick="document.getElementById('div-config').style.display = 'none';
             elementoAberto = 'inicio'">X</h1>
         <button class="button-config" onclick="mudarContraste()">Alto contraste</button>
-        <button class="button-config">Sem animações</button>
-        <button class="button-config">teste3</button>
+        <button class="button-config" onclick="toggleAnimacao()">Sem animações</button>
+        <button class="button-config" onclick="toggleBlur()">Blur ativado</button>
     </div>
 
     <!-- divUsuario -->
     <div id="div-user">
         <h2 id="displayNomeUsuario">você não deveria estar lendo isso</h2>
         <h3 id="displayEmail">pelo jeito você não inseriu um email... tudo bem! :&rpar;</h3>
-        <button id="buttonLogarSair" onclick="botaoSairLogar()">Sair</button>
-        <button onclick="toggleDivUser()">Sair</button>
+        <button id="buttonLogarSair" onclick="botaoSairLogar()">oxente?</button>
+        <button id="buttonFechar" onclick="toggleDivUser()">Fechar</button>
     </div>
 
     <script src="SCRIPTS/geral.js"></script>
+    <script src="SCRIPTS/index.js"></script>
 </body>
 </html>

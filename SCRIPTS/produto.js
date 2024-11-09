@@ -2,6 +2,8 @@ var listaDeDesejos = []
 listaDeDesejos.length = 14
 listaDeDesejos.fill(0)
 
+var idJogoJson;
+
 function buscar(id){
     // Função que carrega o JSON para consumir a API e processa os dados JSON
 fetch('jogos.json').then(resposta => resposta.json()).then(corpo =>{
@@ -20,23 +22,30 @@ fetch('jogos.json').then(resposta => resposta.json()).then(corpo =>{
                 document.getElementById("precoJogo").innerHTML = jogo.preco
                 // document.getElementById("aguardando").innerHTML = ""
                 // document.getElementById('erro').innerHTML = " "
-                salvarDesejos(id)
+                // salvarDesejos(id)
+                document.getElementById("adicionarDesejo").checked = false
+
+                if(listaDeDesejos.includes(id) == true){
+                    document.getElementById("adicionarDesejo").checked = true
+
+                }
+                idJogoJson = id
             }
             
         })
     })
 }
 
-function salvarDesejos(id){
-    if(document.getElementById("adicionarDesejo").checked == true){
-        console.log("adicionado")
-        listaDeDesejos[id-1] = id
+// function salvarDesejos(id){
+//     if(document.getElementById("adicionarDesejo").checked == true){
+//         console.log("adicionado")
+//         listaDeDesejos[id-1] = id
         
-    } else{
-        if(listaDeDesejos[id-1] == id){
-            listaDeDesejos[id-1] = 0
-        }
-    }
+//     } else{
+//         if(listaDeDesejos[id-1] == id){
+//             listaDeDesejos[id-1] = 0
+//         }
+//     }
+//     document.getElementById("adicionarDesejo").checked = false
 
-    document.getElementById("adicionarDesejo").checked = false
-}
+// }

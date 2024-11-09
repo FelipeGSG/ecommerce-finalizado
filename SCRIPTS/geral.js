@@ -11,8 +11,13 @@ function displayUsuario(){
         displayNome.innerHTML = "Usuário"
         displayEmail.innerHTML = "Sem email definido"
         button.innerHTML = "Logar"
-    } else if(localStorage.getItem("logado") == "true"){
+        document.getElementById("nomeUsuario").innerHTML = "Usuário"
+    }
+    
+    else if(localStorage.getItem("logado") == "true"){
         displayNome.innerHTML = localStorage.getItem("nome")
+        document.getElementById("nomeUsuario").innerHTML = localStorage.getItem("nome")
+        
         if(localStorage.getItem("email") != null){
             displayEmail.innerHTML = localStorage.getItem("email")
         } else{
@@ -20,6 +25,8 @@ function displayUsuario(){
         }
         button.innerHTML = "Sair"
     }
+    esvaziarInput()
+
 }
 
 function botaoSairLogar(){
@@ -32,12 +39,6 @@ function botaoSairLogar(){
  displayUsuario()
 // -------------------------------------------------------
 
-function carregarConta(){
-    if(localStorage.getItem("logado") != "false"){
-        document.getElementById("nomeUsuario").innerHTML = localStorage.getItem("nome")
-    }
-}
-
 function cadastrar(){
     var nome = document.getElementById("login-nome-input").value
     var email = document.getElementById("login-email-input").value
@@ -47,14 +48,20 @@ function cadastrar(){
     localStorage.setItem("email", email)
     localStorage.setItem("logado", true)
 
-    carregarConta()
+    displayUsuario()
 }
-
-carregarConta()
 
 function sairConta(){
     localStorage.setItem("logado", false)
-    carregarConta()
+    displayUsuario()
+}
+
+function esvaziarInput(){
+    if(window.location.href == "quemSomos.html"){
+        document.getElementById("login-nome-input").value = ""
+        document.getElementById("login-email-input").value = ""
+        document.getElementById("login-senha-input").value = ""
+    }
 }
 
 // -------------------------------------------------------
@@ -117,3 +124,49 @@ function toggleDivUser(){
 
     }
 }
+
+// -------------------------------------------------------
+var blurAtivado = true
+
+if(localStorage.getItem("blurAtivado") !== null){
+    if(localStorage.getItem("blurAtivado") == "true"){
+        blurAtivado = true
+    }
+    if(localStorage.getItem("blurAtivado") == "false"){
+        blurAtivado = false
+    }
+}
+
+const backgroundConfig = document.getElementById("div-config")
+const backgroundDesejos = document.getElementById("listaDeDesejos")
+
+function toggleBlur(){
+    blurAtivado = !blurAtivado
+    mudarBlur()
+}
+
+function mudarBlur(){
+    console.log(blurAtivado)
+    if(blurAtivado == true){
+        backgroundConfig.style.backdropFilter = "blur(15px)"
+        backgroundConfig.style.backgroundColor = "var(--corFundoOpacity)"
+        try {
+
+            backgroundDesejos.style.backdropFilter = "blur(15px)"        
+            backgroundDesejos.style.backgroundColor = "var(--corFundoOpacity)"
+        } catch (TypeError){
+
+        }
+    } else{
+        backgroundConfig.style.backdropFilter = "blur(0px)"
+        backgroundConfig.style.backgroundColor = "var(--corFundo)"
+        try {
+            backgroundDesejos.style.backdropFilter = "blur(0px)"        
+            backgroundDesejos.style.backgroundColor = "var(--corFundo)"
+        } catch (TypeError) {
+        }
+    }
+    localStorage.setItem("blurAtivado", blurAtivado)
+}
+
+mudarBlur()
