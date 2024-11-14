@@ -1,3 +1,3 @@
-# ecommerce-teste1
+# ecommerce-finalizado
 
-https://felipegsg.github.io/ecommerce-teste1/
+https://felipegsg.github.io/ecommerce-finalizado/
