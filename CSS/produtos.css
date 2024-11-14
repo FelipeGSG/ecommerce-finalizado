@@ -242,8 +242,18 @@ main{
 @media (width < 50rem) {
     header{
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: left;
+        overflow: auto;
+        gap: 1.5rem;
+        /* flex-direction: column; */
     }
+        .usuario, .logo, .configuracao{
+            padding: 0;
+        }
+        .usuario{
+            margin-left: none;
+        }
     #popUpProduto{
         align-items: center;
         justify-content: center;

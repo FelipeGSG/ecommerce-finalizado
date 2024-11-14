@@ -12,12 +12,25 @@ function displayUsuario(){
         displayEmail.innerHTML = "Sem email definido"
         button.innerHTML = "Logar"
         document.getElementById("nomeUsuario").innerHTML = "Usuário"
+
+        try {
+            document.getElementById("bemVindoUsuario").innerHTML = "usuario"
+        } catch (error) {
+            
+        }
     }
     
     else if(localStorage.getItem("logado") == "true"){
         displayNome.innerHTML = localStorage.getItem("nome")
         document.getElementById("nomeUsuario").innerHTML = localStorage.getItem("nome")
+
+        try {
+            document.getElementById("bemVindoUsuario").innerHTML = localStorage.getItem("nome")
+        } catch (error) {
+            
+        }
         
+
         if(localStorage.getItem("email") != null){
             displayEmail.innerHTML = localStorage.getItem("email")
         } else{
@@ -44,11 +57,23 @@ function cadastrar(){
     var email = document.getElementById("login-email-input").value
     var senha = document.getElementById("login-senha-input").value
 
+    if(nome == "" || senha == ""){
+        return
+    }
+    
+
     localStorage.setItem("nome", nome)
-    localStorage.setItem("email", email)
     localStorage.setItem("logado", true)
+    if(email != ""){
+        localStorage.setItem("email", email)
+    }
 
     displayUsuario()
+
+    var nome = document.getElementById("login-nome-input").value = "" 
+    var email = document.getElementById("login-email-input").value = ""
+    var senha = document.getElementById("login-senha-input").value = ""
+
 }
 
 function sairConta(){
@@ -120,7 +145,7 @@ function toggleDivUser(){
         document.getElementById("div-user").style.right = "0px"
     } else{
         elementoAberto =  document.getElementById("div-user")
-        document.getElementById("div-user").style.right = "-500px"
+        document.getElementById("div-user").style.right = "-80%"
 
     }
 }

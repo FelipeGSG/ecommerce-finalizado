@@ -27,9 +27,11 @@ aside{
         padding: 8px 6px;
         border: 1px solid gray;
         border-radius: 8px;
+        background-color: var(--corFundo);
+        color: var(--corSemHover);
     }
         .divFundoCadastro input:focus{
-            color: black;
+            color: rgb(255, 255, 255);
         }
     #send-register{
         width: 70%;
