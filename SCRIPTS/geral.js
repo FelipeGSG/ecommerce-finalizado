@@ -16,7 +16,6 @@ function displayUsuario(){
         try {
             document.getElementById("bemVindoUsuario").innerHTML = "usuario"
         } catch (error) {
-            
         }
     }
     
@@ -27,10 +26,7 @@ function displayUsuario(){
         try {
             document.getElementById("bemVindoUsuario").innerHTML = localStorage.getItem("nome")
         } catch (error) {
-            
         }
-        
-
         if(localStorage.getItem("email") != null){
             displayEmail.innerHTML = localStorage.getItem("email")
         } else{
@@ -50,8 +46,8 @@ function botaoSairLogar(){
     }
 }
  displayUsuario()
-// -------------------------------------------------------
 
+// -------------------------------------------------------
 function cadastrar(){
     var nome = document.getElementById("login-nome-input").value
     var email = document.getElementById("login-email-input").value
@@ -60,8 +56,6 @@ function cadastrar(){
     if(nome == "" || senha == ""){
         return
     }
-    
-
     localStorage.setItem("nome", nome)
     localStorage.setItem("logado", true)
     if(email != ""){
@@ -94,7 +88,6 @@ var elementoAberto = "inicio"
 
 document.body.addEventListener("keyup", (event, elemento) =>{
     elemento = elementoAberto
-    // console.log(event.key)
     if(event.key === "Escape" && elementoAberto == "inicio"){
         window.location.href = "index.html"
     } else if(event.key === "Escape" && elementoAberto != "inicio"){

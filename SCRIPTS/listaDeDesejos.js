@@ -18,7 +18,6 @@ function salvarDesejos(id){
 
 }
 
-
 function criarElementoLista(id){
     const tr = document.createElement("tr")
     tr.setAttribute("id", `id${id}`)
@@ -38,7 +37,6 @@ function criarElementoLista(id){
         salvarDesejos(id)
     }
         fetch('jogos.json').then(resposta => resposta.json()).then(corpo =>{
-
             corpo.forEach(jogo => {
                     if(jogo.id == listaDeDesejos[id-1]){
                         img.src = jogo.imagem
@@ -56,7 +54,6 @@ function criarElementoLista(id){
                         table.appendChild(tr)
                     }
             })
-
         })
 }
 
