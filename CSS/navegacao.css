@@ -5,13 +5,9 @@ header{
     align-items: center;
     justify-content: center;
     background-color: var(--corNavEscura);
-    gap: 4rem;
-    height: var(--alturaHeader);
+    /* height: var(--alturaHeader); */
     padding: 0px var(--paddingPadrao);
 }
-    header > .usuario {
-        margin-left: auto;
-    }
     .headerItem{
         padding: 1rem;
         display: flex;
@@ -20,7 +16,7 @@ header{
         text-align: center;
         justify-content: center;
         width: 90px;
-    }
+    } 
         .headerItem:hover h4{
             color: aliceblue;
         }
@@ -32,3 +28,6 @@ header{
             width: 80px;
             height: 70px;
         }
+    .ancora{
+        text-decoration: none;
+    }

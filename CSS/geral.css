@@ -2,7 +2,6 @@
     /* #262636, #181828;  */
     /* #333346, #232333*/
     --corNavEscura: #262636;
-    /* --corNavEscura: #181828; */
     --alturaHeader: 18vh;
     --corFundo: #333346;
     --corFundoOpacity: #333346c0;
@@ -15,8 +14,7 @@
     color: var(--corSemHover);
     font-weight: 400;
     max-width: 100vw;
-    /* box-sizing: border-box; */
-    /* overflow: auto; */
+
 }
 
 body{
@@ -25,7 +23,7 @@ body{
     width: 100vw;
     max-width: 100vw;
     min-height: 100vh;
-    /* scrollbar-backround-active: red; */
+
 }
     body::-webkit-scrollbar{
     background-color: rgb(26, 26, 54);;
@@ -37,30 +35,49 @@ body{
         transition: 0.4s;
     }
     body::-webkit-scrollbar-thumb:active{
-        /* filter: brightness(1.4); */
         background-color: rgb(55, 55, 85);
 
     }
-    /* ::-webkit-scrollbar-track-piece{
-        color: red;
-        background-color: yellow;
-    } */
+
 
 header{
-    padding: 0.5rem;
     grid-area: header;
-    height: 100%;
     width: 100%;
     max-width: 100vw;
     display: flex;
     justify-content: center;
     box-sizing: border-box;
 }
-    .configuracao{
-        margin-left: 2%;
+.logo{
+    position: absolute;
+    margin-left: 5%;
+    left: 10vw;
+    scale: 1.2;
+}
+.logo img{
+    height: 80%;
+}
+.logo a{
+    display: flex;
+    gap: 15px;
+    font-size: 35px;
+    text-align: center;
+    align-items: center;
+}
+header .configuracao{
+    margin-left: 90%;
+    font-size: smaller;
+}
+    .configuracao img{
+        height: 60px;
     }
-    .usuario{
-        margin-right: 2%;
+header .usuario{
+    margin-right: 10%;
+    font-size: smaller;
+
+}
+    .usuario img{
+        height: 60px;
     }
 .opcao{
     display: flex;
@@ -226,10 +243,6 @@ footer{
         background-color: var(--corFundo);
         color: var(--corSemHover);
     }
-/* *{
-    max-width: 100vw;
-
-} */
 body{
     overflow-x: hidden;
 }
@@ -240,11 +253,7 @@ body{
         max-width: 100%;
         min-width: 100%;
     }
-    /* body, header, main, footer{
-        min-width: fit-content;
-        max-width: none;
-        width: 100vw;
-    } */
+
     aside{
         flex-wrap: wrap;
         overflow: auto;

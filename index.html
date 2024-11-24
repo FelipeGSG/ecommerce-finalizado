@@ -14,21 +14,21 @@
 </head>
 <body>
     <header>
-        <div class="headerItem configuracao" 
-            onclick="document.getElementById('div-config').style.display = 'flex';
-            elementoAberto = document.getElementById('div-config')">
-            <img class="imagemHeader" src="IMG/configuracao.svg" width="90px" alt="">
-            <h4>Configurações</h4>
-        </div>
         <div class="headerItem logo">
             <a href="index.html" style="text-decoration: none;">
                 <img class="imagemHeader" src="IMG/logotipo jogos indies (1).png" width="120px" alt="">
                 <h4>GamesIndies</h4>
             </a>
         </div>
+        <div class="headerItem configuracao" 
+            onclick="document.getElementById('div-config').style.display = 'flex';
+            elementoAberto = document.getElementById('div-config')">
+            <img class="imagemHeader" src="IMG/configuracao.svg" alt="">
+            <h4>Configurações</h4>
+        </div>
         <div class="headerItem usuario" 
             onclick="toggleDivUser()">
-            <img class="imagemHeader" src="IMG/usuario.svg" width="120px" alt="">
+            <img class="imagemHeader" src="IMG/usuario.svg" alt="">
             <h4 id="nomeUsuario">Usuário</h4>
         </div>
         
@@ -68,6 +68,42 @@
                 <img class="imgFundoSlide" draggable="false" src="IMG/jogos/hades2.png" alt="">
                 <img class="imgFundoSlide" draggable="false" src="IMG/jogos/hollow_knight.png" alt="">
             </div>
+        </div>
+        <h1 style="text-align: justify;">Categorias:</h1>
+        <div>
+            <h3>Gênero</h3>
+           <button class="botaoCategoria">Ação</button> 
+           <button class="botaoCategoria">Aventura</button> 
+           <button class="botaoCategoria">Sandbox</button> 
+           <button class="botaoCategoria">Terror</button> 
+           <button class="botaoCategoria">Corrida</button> 
+           <button class="botaoCategoria">FPS</button> 
+           <button class="botaoCategoria">Tower Defense</button> 
+           <button class="botaoCategoria">Puzzle</button> 
+           <button class="botaoCategoria">MOBA</button> 
+           <button class="botaoCategoria">RPG</button> 
+           <button class="botaoCategoria">Luta</button> 
+           <button class="botaoCategoria">Beat-em up</button> 
+           <button class="botaoCategoria">Ritmo</button> 
+           <button class="botaoCategoria">Tabuleiro</button> 
+           <hr>
+           <h3>Modo de jogo</h3>
+           <button class="botaoCategoria">Singleplayer</button> 
+           <button class="botaoCategoria">Multiplayer</button> 
+           <button class="botaoCategoria">Multiplayer local</button>
+           <button class="botaoCategoria">Misto</button>
+           <hr>
+           <!-- <h3>Conexão</h3>
+           <button class="botaoCategoria">Online</button> 
+           <button class="botaoCategoria">Offline</button> 
+           <hr> -->
+           <h3>Plataforma</h3>
+           <button class="botaoCategoria">Crossplay</button> 
+           <button class="botaoCategoria">Xbox One</button> 
+           <button class="botaoCategoria">Xbox Series X</button> 
+           <button class="botaoCategoria">Playstation 4</button> 
+           <button class="botaoCategoria">Playstation 5</button> 
+           <button class="botaoCategoria">Nintendo Switch</button> 
         </div>
     </main>
     <footer>

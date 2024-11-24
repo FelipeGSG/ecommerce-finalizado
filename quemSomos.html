@@ -14,24 +14,23 @@
 </head>
 <body>
     <header>
-        <div class="headerItem configuracao" 
-            onclick="document.getElementById('div-config').style.display = 'flex';
-            elementoAberto = document.getElementById('div-config');console.log('oi')">
-            <img class="imagemHeader" src="IMG/configuracao.svg" width="90px" alt="">
-            <h4>Configurações</h4>
-        </div>
         <div class="headerItem logo">
             <a href="index.html" style="text-decoration: none;">
                 <img class="imagemHeader" src="IMG/logotipo jogos indies (1).png" width="120px" alt="">
                 <h4>GamesIndies</h4>
             </a>
         </div>
+        <div class="headerItem configuracao" 
+            onclick="document.getElementById('div-config').style.display = 'flex';
+            elementoAberto = document.getElementById('div-config')">
+            <img class="imagemHeader" src="IMG/configuracao.svg" alt="">
+            <h4>Configurações</h4>
+        </div>
         <div class="headerItem usuario" 
             onclick="toggleDivUser()">
-            <img class="imagemHeader" src="IMG/usuario.svg" width="120px" alt="">
+            <img class="imagemHeader" src="IMG/usuario.svg" alt="">
             <h4 id="nomeUsuario">Usuário</h4>
         </div>
-        
     </header>
 
 
