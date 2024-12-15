@@ -1,7 +1,7 @@
 # 🎮 Simulação de E-commerce de jogos indies
+## 📘 Github educacional: [FelipeGSG](https://github.com/FelipeGSG)
 
-## 🌐 Link do site:
-https://felipegsg.github.io/ecommerce-finalizado/
+## 🌐 Link do site: https://felipegsg.github.io/ecommerce-finalizado/
 
 ## ✏️ Descrição:
 Projeto feito no [SENAI Nami Jafet](https://sp.senai.br/unidade/mogidascruzes/)
