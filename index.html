@@ -55,7 +55,7 @@
         <h1 class="textoPropaganda" draggable="false">Diversos jogos em promoção!</h1>
             </div>
             <div class="slider">
-                <img class="imgFundoSlide" draggable="false"  src="IMG/jogos/another_crabs_treasure.png" alt="">
+                <img class="imgFundoSlide" draggable="false" src="IMG/jogos/another_crabs_treasure.png" alt="">
                 <img class="imgFundoSlide" draggable="false" src="IMG/jogos/celeste.png" alt="">
                 <img class="imgFundoSlide" draggable="false" src="IMG/jogos/cuphead.png" alt="">
                 <img class="imgFundoSlide" draggable="false" src="IMG/jogos/hades2.png" alt="">
@@ -70,40 +70,45 @@
             </div>
         </div>
         <h1 style="text-align: justify;">Categorias:</h1>
+        <div class="divCategoriasEscolhidas">
+            <div id="categoriaEscolhida">
+
+            </div>
+            <div id="categoriaFechar">
+                <img src="IMG/delete.svg" onclick="limparCategorias()" width="70" alt="">
+            </div>
+        </div>
         <div>
             <h3>Gênero</h3>
-           <button class="botaoCategoria">Ação</button> 
-           <button class="botaoCategoria">Aventura</button> 
-           <button class="botaoCategoria">Sandbox</button> 
-           <button class="botaoCategoria">Terror</button> 
-           <button class="botaoCategoria">Corrida</button> 
-           <button class="botaoCategoria">FPS</button> 
-           <button class="botaoCategoria">Tower Defense</button> 
-           <button class="botaoCategoria">Puzzle</button> 
-           <button class="botaoCategoria">MOBA</button> 
-           <button class="botaoCategoria">RPG</button> 
-           <button class="botaoCategoria">Luta</button> 
-           <button class="botaoCategoria">Beat-em up</button> 
-           <button class="botaoCategoria">Ritmo</button> 
-           <button class="botaoCategoria">Tabuleiro</button> 
+           <button class="botaoCategoria" onclick="addCategoria('Ação', this)">Ação</button> 
+           <button class="botaoCategoria" onclick="addCategoria('Aventura', this)">Aventura</button> 
+           <button class="botaoCategoria" onclick="addCategoria('Sandbox', this)">Sandbox</button> 
+           <button class="botaoCategoria" onclick="addCategoria('Terror', this)">Terror</button> 
+           <button class="botaoCategoria" onclick="addCategoria('Corrida', this)">Corrida</button> 
+           <button class="botaoCategoria" onclick="addCategoria('FPS', this)">FPS</button> 
+           <button class="botaoCategoria" onclick="addCategoria('Tower Defense', this)">Tower Defense</button> 
+           <button class="botaoCategoria" onclick="addCategoria('Puzzle', this)">Puzzle</button> 
+           <button class="botaoCategoria" onclick="addCategoria('MOBA', this)">MOBA</button> 
+           <button class="botaoCategoria" onclick="addCategoria('RPG', this)">RPG</button> 
+           <button class="botaoCategoria" onclick="addCategoria('Luta', this)">Luta</button> 
+           <button class="botaoCategoria" onclick="addCategoria('Beat-em up', this)">Beat-em up</button> 
+           <button class="botaoCategoria" onclick="addCategoria('Ritmo', this)">Ritmo</button> 
+           <button class="botaoCategoria" onclick="addCategoria('Tabuleiro', this)">Tabuleiro</button> 
            <hr>
            <h3>Modo de jogo</h3>
-           <button class="botaoCategoria">Singleplayer</button> 
-           <button class="botaoCategoria">Multiplayer</button> 
-           <button class="botaoCategoria">Multiplayer local</button>
-           <button class="botaoCategoria">Misto</button>
+           <button class="botaoCategoria" onclick="addCategoria('Singleplayer', this)">Singleplayer</button> 
+           <button class="botaoCategoria" onclick="addCategoria('Multiplayer Online', this)">Multiplayer Online</button> 
+           <button class="botaoCategoria" onclick="addCategoria('Multiplayer co-op', this)">Multiplayer co-op</button>
+           <button class="botaoCategoria" onclick="addCategoria('Misto', this)">Misto</button>
            <hr>
-           <!-- <h3>Conexão</h3>
-           <button class="botaoCategoria">Online</button> 
-           <button class="botaoCategoria">Offline</button> 
-           <hr> -->
+   
            <h3>Plataforma</h3>
-           <button class="botaoCategoria">Crossplay</button> 
-           <button class="botaoCategoria">Xbox One</button> 
-           <button class="botaoCategoria">Xbox Series X</button> 
-           <button class="botaoCategoria">Playstation 4</button> 
-           <button class="botaoCategoria">Playstation 5</button> 
-           <button class="botaoCategoria">Nintendo Switch</button> 
+           <button class="botaoCategoria" onclick="addCategoria('Crossplay', this)">Crossplay</button> 
+           <button class="botaoCategoria" onclick="addCategoria('Xbox One', this)">Xbox One</button> 
+           <button class="botaoCategoria" onclick="addCategoria('Xbox Series X', this)">Xbox Series X</button> 
+           <button class="botaoCategoria" onclick="addCategoria('Playstation 4', this)">Playstation 4</button> 
+           <button class="botaoCategoria" onclick="addCategoria('Playstation 5', this)">Playstation 5</button> 
+           <button class="botaoCategoria" onclick="addCategoria('Nintendo Switch', this)">Nintendo Switch</button> 
         </div>
     </main>
     <footer>
