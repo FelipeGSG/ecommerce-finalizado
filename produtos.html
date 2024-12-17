@@ -13,7 +13,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <title>Produtos</title>
+    <title>Produtos em destaque</title>
 </head>
 <body>
     <header>
@@ -23,16 +23,18 @@
                 <h4>GamesIndies</h4>
             </a>
         </div>
-        <div class="headerItem configuracao" 
-            onclick="document.getElementById('div-config').style.display = 'flex';
-            elementoAberto = document.getElementById('div-config')">
-            <img class="imagemHeader" src="IMG/configuracao.svg" alt="">
-            <h4>Configurações</h4>
-        </div>
-        <div class="headerItem usuario" 
-            onclick="toggleDivUser()">
-            <img class="imagemHeader" src="IMG/usuario.svg" alt="">
-            <h4 id="nomeUsuario">Usuário</h4>
+        <div style="margin-left: auto; display: flex;">
+            <div class="headerItem configuracao" 
+                onclick="document.getElementById('div-config').style.display = 'flex';
+                elementoAberto = document.getElementById('div-config')">
+                <img class="imagemHeader" src="IMG/configuracao.svg" alt="">
+                <h4>Configurações</h4>
+            </div>
+            <div class="headerItem usuario" 
+                onclick="toggleDivUser()">
+                <img class="imagemHeader" src="IMG/usuario.svg" alt="">
+                <h4 id="nomeUsuario">Usuário</h4>
+            </div>
         </div>
         
     </header>
