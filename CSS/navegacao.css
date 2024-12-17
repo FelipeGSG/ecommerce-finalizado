@@ -16,7 +16,22 @@ header{
         text-align: center;
         justify-content: center;
         width: 90px;
+        min-width: fit-content;
     } 
+    .logo a{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-size: 36px;
+    }
+    .logo a h4{
+        margin: 30px 0px;
+    }
+    .logo a img{
+        height: 65px;
+        width: 100px;
+    }
+    
         .headerItem:hover h4{
             color: aliceblue;
         }
@@ -30,4 +45,27 @@ header{
         }
     .ancora{
         text-decoration: none;
+    }
+    @media (width < 50em) {
+        header{
+            flex-direction: column;
+        }
+
+        header div:last-child{
+            width: 100%;
+        }
+        .usuario, .configuracao{
+            max-width: 100px;
+            border: 0;
+            margin: auto;
+            /* background-color: black; */
+        }
+        .usuario img,
+        .configuracao img{
+            width: 50px;
+            height: 50px;
+        }
+        .usuario h4,.configuracao h4{
+            font-size: 10px;
+        }
     }

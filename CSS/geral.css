@@ -49,12 +49,12 @@ header{
     box-sizing: border-box;
 }
 .logo{
-    position: absolute;
-    margin-left: 5%;
+    /* position: absolute; */
+    /* margin-left: 5%;
     left: 10vw;
-    scale: 1.2;
+    scale: 1.2; */
 }
-.logo img{
+/* .logo img{
     height: 80%;
 }
 .logo a{
@@ -78,7 +78,7 @@ header .usuario{
 }
     .usuario img{
         height: 60px;
-    }
+    } */
 .opcao{
     display: flex;
     align-items: center;

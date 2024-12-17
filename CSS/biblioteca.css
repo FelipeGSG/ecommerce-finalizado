@@ -1,0 +1,33 @@
+main{
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: baseline;
+    padding-left: 130px;
+    padding-right: 130px;
+}
+p{
+    margin: 10px 0px;
+    max-width: 200px;
+    font-size: 1.3em;
+    font-weight: 400;
+}
+
+.divMaeProduto{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+.divImgProduto{
+    margin-bottom: auto;
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    width: 200px;
+    height: 280px;
+    transition: 0.3s;
+}
+.divImgProduto:hover{
+    scale: 1.2;
+}
