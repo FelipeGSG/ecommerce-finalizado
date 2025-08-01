@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="IMG/logotipo.png" type="image/x-icon">
+    
     <link rel="stylesheet" href="CSS/geral.css">
     <link rel="stylesheet" href="CSS/navegacao.css">
     <link rel="stylesheet" href="CSS/quemSomos.css">
@@ -13,44 +15,30 @@
     <title>Quem somos</title>
 </head>
 <body>
-    <header>
-        <div class="headerItem logo">
-            <a href="index.html" style="text-decoration: none;">
-                <img class="imagemHeader" src="IMG/logotipo jogos indies (1).png" width="120px" alt="">
-                <h4>GamesIndies</h4>
-            </a>
-        </div>
-        <div style="margin-left: auto; display: flex;">
-            <div class="headerItem configuracao" 
-                onclick="document.getElementById('div-config').style.display = 'flex';
-                elementoAberto = document.getElementById('div-config')">
-                <img class="imagemHeader" src="IMG/configuracao.svg" alt="">
-                <h4>Configurações</h4>
-            </div>
-            <div class="headerItem usuario" 
-                onclick="toggleDivUser()">
-                <img class="imagemHeader" src="IMG/usuario.svg" alt="">
-                <h4 id="nomeUsuario">Usuário</h4>
-            </div>
-        </div>
-        
+    <header> 
+        <img class="iconHeader" src="IMG/configuracao.svg"
+        alt="Configurações" onclick="openDiv('div-config')">
+
+        <a href="index.html">
+            <img src="IMG/logotipo.png" id="logo" alt="Logo">
+            <span>GamesIndies</span>
+        </a>
+
+        <img class="iconHeader" src="IMG/usuario.svg"
+        alt="Usuário" onclick="openDiv('div-user')">
     </header>
 
-
-    <aside class="navegacaoLateral">
-        <div class="opcao">
-            <a class="ancora" href="produtos.html">
-                <img class="iconeAncora" src="IMG/iconeProdutos.svg" alt="">
-                <h3>Produtos</h3>
-            </a>
-        </div>
-        <div class="opcao">
-            <a class="ancora" href="quemSomos.html">
-                <img class="iconeAncora" src="IMG/iconeQuemSomos.svg" alt="">
-                <h3>Quem somos</h3>
-            </a>
-        </div>
+    <aside>
+        <a href="produtos.html" class="ancora optionAside">
+            <img class="iconOptionAside" src="IMG/produtos.svg" alt="icone produtos">
+            <span>Produtos</span>
+        </a>
+        <a href="quemSomos.html" class="ancora optionAside">
+            <img class="iconOptionAside" src="IMG/quemSomos.svg" alt="icone quem somos">
+            <span>Quem somos</span>
+        </a>
     </aside>
+
     <main>
 
         <div style="max-width: 70vw; margin-left: auto; margin-right: auto; font-size: 1.4em;">
@@ -59,21 +47,21 @@
             esperamos que aproveite, e se quiser, cadastre-se para fazer parte da nossa comunidade!</h3>
         </div>
 
-        <div class="divFundoCadastro">
+        <form id="divFundoCadastro">
             <h2>Cadastre-se!</h2>
             <br>
-            <label for="login-nome-input"> Nome &nbsp; <sup>*obrigatório</sup></label> 
-            <input class="inputs-cadastro" type="text" name="" id="login-nome-input" placeholder="Digite seu nome de usuário">
+            <label for="name_input"> Nome &nbsp; <sup>*obrigatório</sup></label> 
+            <input class="inputs-cadastro" type="text" id="name_input" placeholder="Digite seu nome de usuário">
             <br><br>
-            <label for="login-email-input"> Email &nbsp; </label> 
-            <input class="inputs-cadastro" type="email" name="" id="login-email-input" placeholder="Digite seu email">
+            <label for="email_input"> Email &nbsp; </label> 
+            <input class="inputs-cadastro" type="email" id="email_input" placeholder="Digite seu email">
             <br><br>
-            <label for="login-senha-input"> Senha &nbsp; <sup>*obrigatório</sup> </label> 
-            <input class="inputs-cadastro" type="password" name="" id="login-senha-input" placeholder="Digite sua senha">
+            <label for="password_input"> Senha &nbsp; <sup>*obrigatório</sup> </label> 
+            <input class="inputs-cadastro" type="password" id="password_input" placeholder="Digite sua senha">
             <br><br>
-            <button id="send-register" onclick="cadastrar()">Enviar</button>
+            <button id="send-register" type="submit">Enviar</button>
             
-        </div>
+        </form>
     </main>
     <footer>
         <div>
@@ -100,18 +88,16 @@
         <button class="button-config" onclick="toggleBlur()">Blur ativado</button>
     </div>
 
-     <!-- divUsuario -->
-     <div id="div-user">
-        <h2 id="displayNomeUsuario">você não deveria estar lendo isso</h2>
-        <h3 id="displayEmail">pelo jeito você não inseriu um email... tudo bem! :&rpar;</h3>
-        <button id="buttonLogarSair" onclick="botaoSairLogar()">oxente?</button>
-        <button id="buttonFechar" onclick="toggleDivUser()">Fechar</button>
+    <!-- divUsuario -->
+    <div id="div-user">
+        <h2 id="displayNomeUsuario">...</h2>
+        <h3 id="displayEmail">...</h3>
+        <button id="buttonLogarSair" onclick="botaoSairLogar()">...</button>
+        <button id="buttonFechar" onclick="openDiv()">Fechar</button>
     </div>
 
 
-
     <script src="SCRIPTS/geral.js"></script>
-
-
+    <script src="SCRIPTS/cadastro.js"></script>
 </body>
 </html>

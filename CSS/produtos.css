@@ -21,15 +21,15 @@ main{
     align-items: center;
 
 }
-    .container1, .container2{
-        display: flex;
-        gap: 2.5rem;
-        overflow-x: scroll;
-        background-color: var(--corNavEscura);
-        width: 75vw;
-        padding: 2.5rem;
-        scrollbar-color:  rgb(70, 70, 105) rgb(26, 26, 54);
-    }
+div[class^="container"]{
+    display: flex;
+    gap: 2.5rem;
+    overflow-x: scroll;
+    background-color: var(--corNavEscura);
+    width: 75vw;
+    padding: 2.5rem;
+    scrollbar-color:  rgb(70, 70, 105) rgb(26, 26, 54);
+}
 
     .container1{
         margin-bottom: 150px;
@@ -88,7 +88,6 @@ main{
 
         }
 
-
         /* container 2 */
         .produto-parte2:nth-child(1){
             background-image: url(../IMG/jogos/sea_of_stars.png);
@@ -128,7 +127,6 @@ main{
     }
         #popUpProduto *{
             color: aliceblue;
-            /* text-align: start; */
         }
         #popUpProduto img{
             min-width: 400px;
@@ -165,7 +163,6 @@ main{
 #listaDeDesejos{
     background-color: var(--corFundoOpacity);
     backdrop-filter: blur(15px);
-    /* background-color: blue; */
     position: fixed;
     display: none;
     flex-direction: column;
@@ -190,11 +187,9 @@ main{
         transition: 0.4s;
     }
     #listaDeDesejos::-webkit-scrollbar-thumb:active{
-        /* filter: brightness(1.4); */
         background-color: rgb(55, 55, 85);
 
     }
-
 
     #tabelaListaDesejos{
         margin-top: 100px;
@@ -202,9 +197,6 @@ main{
         height: fit-content;
         margin-left: auto;
         margin-right: auto;
-        /* background-color: greenyellow; */
-        /* overflow-y: auto; */
-
     }
     td{
         padding: 25px 0px;
@@ -215,8 +207,6 @@ main{
     }
     th,td{
         max-height: 400px;
-        /* height: 100px; */
-        /* background-color: aqua; */
         border-top: 2px solid var(--corSemHover);
         border-bottom: 2px solid var(--corSemHover);
     }
@@ -247,7 +237,6 @@ main{
         justify-content: left;
         overflow: auto;
         gap: 1.5rem;
-        /* flex-direction: column; */
     }
         .usuario, .logo, .configuracao{
             padding: 0;

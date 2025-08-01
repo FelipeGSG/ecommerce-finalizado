@@ -1,71 +1,35 @@
-
-
 header{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     background-color: var(--corNavEscura);
-    /* height: var(--alturaHeader); */
-    padding: 0px var(--paddingPadrao);
+    padding: var(--paddingPadrao);
+    box-sizing: border-box;
 }
-    .headerItem{
-        padding: 1rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        justify-content: center;
-        width: 90px;
-        min-width: fit-content;
-    } 
-    .logo a{
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        font-size: 36px;
-    }
-    .logo a h4{
-        margin: 30px 0px;
-    }
-    .logo a img{
-        height: 65px;
-        width: 100px;
-    }
-    
-        .headerItem:hover h4{
-            color: aliceblue;
-        }
-        .opcao:hover h2{
-            color: aliceblue;
+header > div{
+    display: flex;
+    align-items: center;
+}
+header .iconHeader{
+    width: 50px;
+    margin: var(--paddingPadrao);
+}
+header .iconHeader:hover{
+    filter: brightness(0) saturate(100%) invert(96%) sepia(39%) saturate(3518%) hue-rotate(180deg) brightness(112%) contrast(107%);
+}
+header a{
+    text-decoration: none;
+    display: flex;
+    padding: 12px;
+    border-radius: 12px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2em;
+    gap: 8px;
+}
+header a:hover{
+    backdrop-filter: brightness(1.2);
+}
 
-        }
-        .imagemHeader, .iconeAncora{
-            width: 80px;
-            height: 70px;
-        }
-    .ancora{
-        text-decoration: none;
-    }
-    @media (width < 50em) {
-        header{
-            flex-direction: column;
-        }
-
-        header div:last-child{
-            width: 100%;
-        }
-        .usuario, .configuracao{
-            max-width: 100px;
-            border: 0;
-            margin: auto;
-            /* background-color: black; */
-        }
-        .usuario img,
-        .configuracao img{
-            width: 50px;
-            height: 50px;
-        }
-        .usuario h4,.configuracao h4{
-            font-size: 10px;
-        }
-    }
+header #logo{
+    height: 60px;
+}
