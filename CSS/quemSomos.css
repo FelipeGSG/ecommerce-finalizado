@@ -7,7 +7,7 @@ aside{
         justify-content: center;
     }
 
-.divFundoCadastro{
+#divFundoCadastro{
     margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
@@ -22,7 +22,7 @@ aside{
     border-radius: 10px;
     font-size: 1.4em;
 }
-    .divFundoCadastro input{
+    #divFundoCadastro input{
         width: 70%;
         padding: 8px 6px;
         border: 1px solid gray;
@@ -30,7 +30,7 @@ aside{
         background-color: var(--corFundo);
         color: var(--corSemHover);
     }
-        .divFundoCadastro input:focus{
+        #divFundoCadastro input:focus{
             color: rgb(255, 255, 255);
         }
     #send-register{

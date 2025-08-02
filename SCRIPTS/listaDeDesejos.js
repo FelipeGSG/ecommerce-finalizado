@@ -78,4 +78,4 @@ function carregarLocalStorage(){
     }
 }
 
-carregarLocalStorage()
+// carregarLocalStorage()

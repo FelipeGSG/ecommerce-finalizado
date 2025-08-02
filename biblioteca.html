@@ -4,48 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca de jogos</title>
+    <link rel="shortcut icon" href="IMG/logotipo.png" type="image/x-icon">
 
     <link rel="stylesheet" href="CSS/geral.css">
     <link rel="stylesheet" href="CSS/navegacao.css">
     <link rel="stylesheet" href="CSS/biblioteca.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="headerItem logo">
-            <a href="index.html" style="text-decoration: none;">
-                <img class="imagemHeader" src="IMG/logotipo jogos indies (1).png" width="120px" alt="">
-                <h4>GamesIndies</h4>
-            </a>
-        </div>
-        <div style="margin-left: auto; display: flex;">
-            <div class="headerItem configuracao" 
-                onclick="document.getElementById('div-config').style.display = 'flex';
-                elementoAberto = document.getElementById('div-config')">
-                <img class="imagemHeader" src="IMG/configuracao.svg" alt="">
-                <h4>Configurações</h4>
-            </div>
-            <div class="headerItem usuario" 
-                onclick="toggleDivUser()">
-                <img class="imagemHeader" src="IMG/usuario.svg" alt="">
-                <h4 id="nomeUsuario">Usuário</h4>
-            </div>
-        </div>
-        
+    <header> 
+        <img class="iconHeader" src="IMG/configuracao.svg"
+        alt="Configurações" onclick="openDiv('div-config')">
+
+        <a href="index.html">
+            <img src="IMG/logotipo.png" id="logo" alt="Logo">
+            <span>GamesIndies</span>
+        </a>
+
+        <img class="iconHeader" src="IMG/usuario.svg"
+        alt="Usuário" onclick="openDiv('div-user')">
     </header>
-    <aside class="navegacaoLateral">
-        <div class="opcao">
-            <a class="ancora" href="produtos.html">
-                <img class="iconeAncora" src="IMG/iconeProdutos.svg" alt="">
-                <h3>Produtos</h3>
-            </a>
-        </div>
-        <div class="opcao">
-            <a class="ancora" href="quemSomos.html">
-                <img class="iconeAncora" src="IMG/iconeQuemSomos.svg" alt="">
-                <h3>Quem somos</h3>
-            </a>
-        </div>
+
+    <aside>
+        <a href="produtos.html" class="ancora optionAside">
+            <img class="iconOptionAside" src="IMG/produtos.svg" alt="icone produtos">
+            <span>Produtos</span>
+        </a>
+        <a href="quemSomos.html" class="ancora optionAside">
+            <img class="iconOptionAside" src="IMG/quemSomos.svg" alt="icone quem somos">
+            <span>Quem somos</span>
+        </a>
     </aside>
+    
     <main>
         
     </main>
@@ -78,10 +71,10 @@
 
     <!-- divUsuario -->
     <div id="div-user">
-        <h2 id="displayNomeUsuario">você não deveria estar lendo isso</h2>
-        <h3 id="displayEmail">pelo jeito você não inseriu um email... tudo bem! :&rpar;</h3>
-        <button id="buttonLogarSair" onclick="botaoSairLogar()">oxente?</button>
-        <button id="buttonFechar" onclick="toggleDivUser()">Fechar</button>
+        <h2 id="displayNomeUsuario">...</h2>
+        <h3 id="displayEmail">...</h3>
+        <button id="buttonLogarSair" onclick="botaoSairLogar()">...</button>
+        <button id="buttonFechar" onclick="openDiv()">Fechar</button>
     </div>
 
     <script src="SCRIPTS/geral.js"></script>

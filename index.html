@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="IMG/logotipo.png" type="image/x-icon">
+    
     <link rel="stylesheet" href="CSS/geral.css">
     <link rel="stylesheet" href="CSS/navegacao.css">
     <link rel="stylesheet" href="CSS/style.css">
@@ -10,46 +12,33 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <title>Página principal</title>
+    <title>GamesIndies</title>
 </head>
 <body>
     <header>
-        <div class="headerItem logo">
-            <a href="index.html" style="text-decoration: none;">
-                <img class="imagemHeader" src="IMG/logotipo jogos indies (1).png" width="120px" alt="">
-                <h4>GamesIndies</h4>
-            </a>
-        </div>
-        <div style="margin-left: auto; display: flex;">
-            <div class="headerItem configuracao" 
-                onclick="document.getElementById('div-config').style.display = 'flex';
-                elementoAberto = document.getElementById('div-config')">
-                <img class="imagemHeader" src="IMG/configuracao.svg" alt="">
-                <h4>Configurações</h4>
-            </div>
-            <div class="headerItem usuario" 
-                onclick="toggleDivUser()">
-                <img class="imagemHeader" src="IMG/usuario.svg" alt="">
-                <h4 id="nomeUsuario">Usuário</h4>
-            </div>
-        </div>
+        <img class="iconHeader" src="IMG/configuracao.svg"
+        alt="Configurações" onclick="openDiv('div-config')">
         
+        <a href="index.html">
+            <img src="IMG/logotipo.png" id="logo" alt="Logo">
+            <span>GamesIndies</span>
+        </a>
+
+        <img class="iconHeader" src="IMG/usuario.svg"
+        alt="Usuário" onclick="openDiv('div-user')">
     </header>
     
-    <aside class="navegacaoLateral">
-        <div class="opcao">
-            <a class="ancora" href="produtos.html">
-                <img class="iconeAncora" src="IMG/iconeProdutos.svg" alt="">
-                <h3>Produtos</h3>
-            </a>
-        </div>
-        <div class="opcao">
-            <a class="ancora" href="quemSomos.html">
-                <img class="iconeAncora" src="IMG/iconeQuemSomos.svg" alt="">
-                <h3>Quem somos</h3>
-            </a>
-        </div>
+    <aside>
+        <a href="produtos.html" class="ancora optionAside">
+            <img class="iconOptionAside" src="IMG/produtos.svg" alt="icone produtos">
+            <span>Produtos</span>
+        </a>
+        <a href="quemSomos.html" class="ancora optionAside">
+            <img class="iconOptionAside" src="IMG/quemSomos.svg" alt="icone quem somos">
+            <span>Quem somos</span>
+        </a>
     </aside>
+
     <main>
         <h1>Bem vindo a GamesIndies, <span id="bemVindoUsuario">usuário!</span></h1>
         <div class="containerSlide">
@@ -71,49 +60,30 @@
                 <img class="imgFundoSlide" draggable="false" src="IMG/jogos/hollow_knight.png" alt="">
             </div>
         </div>
+
+        <h1>Plataformas:</h1>
+        <div id="plataformas"></div>
+        <hr>
+        <h1>Gêneros:</h1>
+        <div id="generos"></div>
+        
         <div>
             <h1 style="text-align: justify;">Categorias:</h1>
-            <div class="divCategoriasEscolhidas">
-                <div id="categoriaEscolhida">
-    
+
+                <div class="containerCategoria">
+                    <div id="plataformasEscolhidas"></div>
+                    <img src="IMG/delete.svg" onclick="limparCategorias('plataformasEscolhidas')" width="70" alt="Limpar">
                 </div>
-                <div id="categoriaFechar">
-                    <img src="IMG/delete.svg" onclick="limparCategorias()" width="70" alt="">
+
+                <div class="containerCategoria">
+                    <div id="generosEscolhidos"></div>
+                    <img src="IMG/delete.svg" onclick="limparCategorias('generosEscolhidos')" width="70" alt="Limpar">
                 </div>
-            </div>
-            <div style="margin: 10px;">
-                <h3>Gênero</h3>
-               <button class="botaoCategoria" onclick="addCategoria('Ação', this)">Ação</button> 
-               <button class="botaoCategoria" onclick="addCategoria('Aventura', this)">Aventura</button> 
-               <button class="botaoCategoria" onclick="addCategoria('Sandbox', this)">Sandbox</button> 
-               <button class="botaoCategoria" onclick="addCategoria('Terror', this)">Terror</button> 
-               <button class="botaoCategoria" onclick="addCategoria('Corrida', this)">Corrida</button> 
-               <button class="botaoCategoria" onclick="addCategoria('FPS', this)">FPS</button> 
-               <button class="botaoCategoria" onclick="addCategoria('Tower Defense', this)">Tower Defense</button> 
-               <button class="botaoCategoria" onclick="addCategoria('Puzzle', this)">Puzzle</button> 
-               <button class="botaoCategoria" onclick="addCategoria('MOBA', this)">MOBA</button> 
-               <button class="botaoCategoria" onclick="addCategoria('RPG', this)">RPG</button> 
-               <button class="botaoCategoria" onclick="addCategoria('Luta', this)">Luta</button> 
-               <button class="botaoCategoria" onclick="addCategoria('Beat-em up', this)">Beat-em up</button> 
-               <button class="botaoCategoria" onclick="addCategoria('Ritmo', this)">Ritmo</button> 
-               <button class="botaoCategoria" onclick="addCategoria('Tabuleiro', this)">Tabuleiro</button> 
-               <hr>
-               <h3>Modo de jogo</h3>
-               <button class="botaoCategoria" onclick="addCategoria('Singleplayer', this)">Singleplayer</button> 
-               <button class="botaoCategoria" onclick="addCategoria('Multiplayer Online', this)">Multiplayer Online</button> 
-               <button class="botaoCategoria" onclick="addCategoria('Multiplayer co-op', this)">Multiplayer co-op</button>
-               <button class="botaoCategoria" onclick="addCategoria('Misto', this)">Misto</button>
-               <hr>
-       
-               <h3>Plataforma</h3>
-               <button class="botaoCategoria" onclick="addCategoria('Crossplay', this)">Crossplay</button> 
-               <button class="botaoCategoria" onclick="addCategoria('Xbox One', this)">Xbox One</button> 
-               <button class="botaoCategoria" onclick="addCategoria('Xbox Series X', this)">Xbox Series X</button> 
-               <button class="botaoCategoria" onclick="addCategoria('Playstation 4', this)">Playstation 4</button> 
-               <button class="botaoCategoria" onclick="addCategoria('Playstation 5', this)">Playstation 5</button> 
-               <button class="botaoCategoria" onclick="addCategoria('Nintendo Switch', this)">Nintendo Switch</button> 
-            </div>
         </div>
+        <div>
+            <p>Resultados: <span id="categoriaResultados"></span></p>
+        </div>
+
     </main>
     <footer>
         <div>
@@ -135,17 +105,17 @@
         <h1 
             onclick="document.getElementById('div-config').style.display = 'none';
             elementoAberto = 'inicio'">X</h1>
-        <button class="button-config" onclick="mudarContraste()">Alto contraste</button>
-        <button class="button-config" onclick="toggleAnimacao()">Sem animações</button>
-        <button class="button-config" onclick="toggleBlur()">Blur ativado</button>
+        <button class="button-config" onclick='manageConfig("hasHighContrast", mudarContraste);'>Alto contraste</button>
+        <button class="button-config" onclick='manageConfig("hasAnimation", mudarAnimacao);'>Sem animações</button>
+        <button class="button-config" onclick='manageConfig("hasBlur", mudarBlur);'>Blur ativado</button>
     </div>
 
     <!-- divUsuario -->
     <div id="div-user">
-        <h2 id="displayNomeUsuario">você não deveria estar lendo isso</h2>
-        <h3 id="displayEmail">pelo jeito você não inseriu um email... tudo bem! :&rpar;</h3>
-        <button id="buttonLogarSair" onclick="botaoSairLogar()">oxente?</button>
-        <button id="buttonFechar" onclick="toggleDivUser()">Fechar</button>
+        <h2 id="displayNomeUsuario">...</h2>
+        <h3 id="displayEmail">...</h3>
+        <button id="buttonLogarSair" onclick="botaoSairLogar()">...</button>
+        <button id="buttonFechar" onclick="openDiv()">Fechar</button>
     </div>
 
     <script src="SCRIPTS/geral.js"></script>

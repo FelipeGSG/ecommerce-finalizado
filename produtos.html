@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="IMG/logotipo.png" type="image/x-icon">
+    
     <link rel="stylesheet" href="CSS/geral.css">
     <link rel="stylesheet" href="CSS/navegacao.css">
     <link rel="stylesheet" href="CSS/produtos.css">
@@ -16,120 +18,46 @@
     <title>Produtos em destaque</title>
 </head>
 <body>
-    <header>
-        <div class="headerItem logo">
-            <a href="index.html" style="text-decoration: none;">
-                <img class="imagemHeader" src="IMG/logotipo jogos indies (1).png" width="120px" alt="">
-                <h4>GamesIndies</h4>
-            </a>
-        </div>
-        <div style="margin-left: auto; display: flex;">
-            <div class="headerItem configuracao" 
-                onclick="document.getElementById('div-config').style.display = 'flex';
-                elementoAberto = document.getElementById('div-config')">
-                <img class="imagemHeader" src="IMG/configuracao.svg" alt="">
-                <h4>Configurações</h4>
-            </div>
-            <div class="headerItem usuario" 
-                onclick="toggleDivUser()">
-                <img class="imagemHeader" src="IMG/usuario.svg" alt="">
-                <h4 id="nomeUsuario">Usuário</h4>
-            </div>
-        </div>
-        
+    <header> 
+        <img class="iconHeader" src="IMG/configuracao.svg"
+        alt="Configurações" onclick="openDiv('div-config')">
+
+        <a href="index.html">
+            <img src="IMG/logotipo.png" id="logo" alt="Logo">
+            <span>GamesIndies</span>
+        </a>
+
+        <img class="iconHeader" src="IMG/usuario.svg"
+        alt="Usuário" onclick="openDiv('div-user')">
     </header>
-    
-    <aside class="navegacaoLateral">
-        <div class="opcao">
-            <a class="ancora" href="produtos.html">
-                <img class="iconeAncora" src="IMG/iconeProdutos.svg" alt="">
-                <h3>Produtos</h3>
-            </a>
-        </div>
-        <div class="opcao">
-            <a class="ancora" href="quemSomos.html">
-                <img class="iconeAncora" src="IMG/iconeQuemSomos.svg" alt="">
-                <h3>Quem somos</h3>
-            </a>
-        </div>
-        <div class="opcao">
-            <a class="ancora" onclick="document.getElementById('listaDeDesejos').style.display = 'flex';elementoAberto.style.display = 'none'; elementoAberto = document.getElementById('listaDeDesejos')">
-                <img class="iconeAncora" src="IMG/iconeListaDesejos.svg" alt="">
-                <h3>Lista de desejos</h3>
-            </a>
-        </div>
+
+    <aside>
+        <a href="produtos.html" class="ancora optionAside">
+            <img class="iconOptionAside" src="IMG/produtos.svg" alt="icone produtos">
+            <span>Produtos</span>
+        </a>
+        <a href="quemSomos.html" class="ancora optionAside">
+            <img class="iconOptionAside" src="IMG/quemSomos.svg" alt="icone quem somos">
+            <span>Quem somos</span>
+        </a>
+        <a class="ancora optionAside" onclick="openDiv('listaDeDesejos')">
+            <img class="iconOptionAside" src="IMG/listaDesejos.svg" alt="icone lista de desejos">
+            <span>Lista de desejos</span>
+        </a>
     </aside>
+
     <main>
         <br><br>
         <div class="geral">
+
             <h1>Mais jogados</h1>
-            <div class="container1">
-                <div onclick="buscar(13); elementoAberto = document.getElementById('backgroundPopUpProduto')" class="produto produto-parte1">
-                    <div class="informacaoTexto">
-                        <h2>Stardew Valley</h2>
-                        <h4>R$24,99 &nbsp;&nbsp;&nbsp; <span>4,6
-                            <img src="IMG/estrela.png" width="14px" alt="">
-                            <img src="IMG/estrela.png" width="14px" alt="">
-                            <img src="IMG/estrela.png" width="14px" alt="">
-                            <img src="IMG/estrela.png" width="14px" alt="">
-                            <img src="IMG/estrela_metade.png" width="14px" alt="">
-                        </span></h4>
-                    </div>
-                </div>
-                
-                <div onclick="buscar(11); elementoAberto = document.getElementById('backgroundPopUpProduto')" class="produto produto-parte1">
-                    <div class="informacaoTexto">
-                        <h2>Plants vs Zombies</h2>
-                        <h4>R$14,99 &nbsp;&nbsp;&nbsp; <span>4,5
-                            <img src="IMG/estrela.png" width="14px" alt="">
-                            <img src="IMG/estrela.png" width="14px" alt="">
-                            <img src="IMG/estrela.png" width="14px" alt="">
-                            <img src="IMG/estrela.png" width="14px" alt="">
-                            <img src="IMG/estrela_metade.png" width="14px" alt="">
-                        </span></h4>
-                    </div>
-                </div>
-                <div onclick="buscar(15); elementoAberto = document.getElementById('backgroundPopUpProduto')" class="produto produto-parte1">
-                    <div class="informacaoTexto">
-                        <h2>The Binding Of Isaac</Table></h2>
-                        <h4>R$36,99 &nbsp;&nbsp;&nbsp; <span>4,6 
-                            <img src="IMG/estrela.png" width="14px" alt="">
-                            <img src="IMG/estrela.png" width="14px" alt="">
-                            <img src="IMG/estrela.png" width="14px" alt="">
-                            <img src="IMG/estrela.png" width="14px" alt="">
-                            <img src="IMG/estrela_metade.png" width="14px" alt="">
-                        </span></h4>
-                    </div>
-                </div>
-                <div onclick="buscar(16); elementoAberto = document.getElementById('backgroundPopUpProduto')" class="produto produto-parte1">
-                    <div class="informacaoTexto">
-                        <h2>Undertale</h2>
-                        <h4>R$19,99 &nbsp;&nbsp;&nbsp; <span>4,7 
-                            <img src="IMG/estrela.png" width="14px" alt="">
-                            <img src="IMG/estrela.png" width="14px" alt="">
-                            <img src="IMG/estrela.png" width="14px" alt="">
-                            <img src="IMG/estrela.png" width="14px" alt="">
-                            <img src="IMG/estrela_metade.png" width="14px" alt="">
-                        </span></h4>
-                    </div>
-                </div>
-                <div onclick="buscar(3); elementoAberto = document.getElementById('backgroundPopUpProduto')" class="produto produto-parte1">
-                    <div class="informacaoTexto">
-                        <h2>Cuphead</h2>
-                        <h4>R$29,99 &nbsp;&nbsp;&nbsp; <span>4,6
-                            <img src="IMG/estrela.png" width="14px" alt="">
-                            <img src="IMG/estrela.png" width="14px" alt="">
-                            <img src="IMG/estrela.png" width="14px" alt="">
-                            <img src="IMG/estrela.png" width="14px" alt="">
-                            <img src="IMG/estrela_metade.png" width="14px" alt="">
-                        </span></h4>
-                    </div>
-                </div>
+            <div class="container1" id="popularidade">
             </div>
-    
+            <hr>
+
             <h1>Mais recentes</h1>
-            <div class="container2">
-                <div onclick="buscar(12); elementoAberto = document.getElementById('backgroundPopUpProduto')" class="produto produto-parte2">
+            <div class="container2" id="recente">
+                <!-- <div onclick="buscar(12); elementoAberto = document.getElementById('backgroundPopUpProduto')" class="produto produto-parte2">
                     <div class="informacaoTexto">
                         <h2>Sea of Stars</h2>
                         <h4>R$149,99 &nbsp;&nbsp;&nbsp; <span>4,6
@@ -188,8 +116,25 @@
                             <img src="IMG/estrela_metade.png" width="14px" alt="">
                         </span></h4>
                     </div>
-                </div>
+                </div> -->
             </div>
+            <hr>
+
+            <h1>Para lançar</h1>
+            <div class="container3" id="lancamento">
+            </div>
+            
+            <h1>Maiores avaliações</h1>
+            <div class="container4" id="avaliacao">
+            </div>
+            <hr>
+            
+            <h1>Melhor preço</h1>
+            <div class="container5" id="preco">
+            </div>
+            <hr>
+
+
         </div>
         <br><br>
     </main>
@@ -221,15 +166,13 @@
 
 
     <!-- divUsuario -->
-    <!-- divUsuario -->
     <div id="div-user">
-        <h2 id="displayNomeUsuario">você não deveria estar lendo isso</h2>
-        <h3 id="displayEmail">pelo jeito você não inseriu um email... tudo bem! :&rpar;</h3>
-        <button id="buttonLogarSair" onclick="botaoSairLogar()">oxente?</button>
-        <button id="buttonFechar" onclick="toggleDivUser()">Fechar</button>
+        <h2 id="displayNomeUsuario">...</h2>
+        <h3 id="displayEmail">...</h3>
+        <button id="buttonLogarSair" onclick="botaoSairLogar()">...</button>
+        <button id="buttonFechar" onclick="openDiv()">Fechar</button>
     </div>
-
-
+    
     <!-- tela do jogo clicado -->
     <div id="backgroundPopUpProduto">
         <div id="popUpProduto">

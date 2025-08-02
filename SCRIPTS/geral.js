@@ -1,121 +1,74 @@
-if(localStorage.getItem("logado") == null){
-    localStorage.setItem("logado", false)
+const divConfig = document.getElementById("div-config")
+const divUser = document.getElementById("div-user")
+const divListaDesejos = document.getElementById("listaDeDesejos")
+
+const elNome = document.getElementById("displayNomeUsuario")
+const elEmail= document.getElementById("displayEmail")
+const elButton = document.getElementById("buttonLogarSair")
+
+let algoAberto = false
+
+const config = {
+    loggedIn: false,
+    hasHighContrast: false,
+    hasAnimation: false,
+    hasBlur: true,
+    name: undefined,
+    email: undefined,
 }
 
-function displayUsuario(){
-    const displayNome = document.getElementById("displayNomeUsuario")
-    const displayEmail = document.getElementById("displayEmail")
-    const button = document.getElementById("buttonLogarSair")
+if(localStorage.getItem("configuracoes") != null){
+    const savedConfig = JSON.parse(localStorage.getItem("configuracoes"))
     
-    if(localStorage.getItem("logado") == "false"){
-        displayNome.innerHTML = "Usuário"
-        displayEmail.innerHTML = "Sem email definido"
-        button.innerHTML = "Logar"
-        document.getElementById("nomeUsuario").innerHTML = "Usuário"
-
-        try {
-            document.getElementById("bemVindoUsuario").innerHTML = "usuario"
-        } catch (error) {
-        }
+    for(let key in config){
+        config[key] = savedConfig[key]
     }
+}
+
+function setLocalStorage(){
+    localStorage.setItem("configuracoes", JSON.stringify({...config}))
+    console.log(config)
+}
+
+function manageConfig(att, callback){
+
+    if(!att || !callback) return
+    if(typeof(config[att]) == "boolean"){
+        config[att] = !config[att]
+    }
+
+    setLocalStorage()
+    callback()
+}
+
+function openDiv(id = "", displayValue = "flex") {
     
-    else if(localStorage.getItem("logado") == "true"){
-        displayNome.innerHTML = localStorage.getItem("nome")
-        document.getElementById("nomeUsuario").innerHTML = localStorage.getItem("nome")
-
-        try {
-            document.getElementById("bemVindoUsuario").innerHTML = localStorage.getItem("nome")
-        } catch (error) {
-        }
-        if(localStorage.getItem("email") != null){
-            displayEmail.innerHTML = localStorage.getItem("email")
-        } else{
-            displayEmail.innerHTML = "Oops! você não inseriu um email!"
-        }
-        button.innerHTML = "Sair"
-    }
-    esvaziarInput()
-
-}
-
-function botaoSairLogar(){
-    if(localStorage.getItem("logado") == "false"){
-        window.location.href = "quemSomos.html"
-    } else{
-        sairConta()
-    }
-}
- displayUsuario()
-
-// -------------------------------------------------------
-function cadastrar(){
-    var nome = document.getElementById("login-nome-input").value
-    var email = document.getElementById("login-email-input").value
-    var senha = document.getElementById("login-senha-input").value
-
-    if(nome == "" || senha == ""){
+    divConfig.style.display = "none"
+    divUser.style.display = "none"
+    
+    if(divListaDesejos) divListaDesejos.style.display = "none"
+    
+    if(id !== ""){
+        document.getElementById(id).style.display = displayValue
+        algoAberto = true
         return
     }
-    localStorage.setItem("nome", nome)
-    localStorage.setItem("logado", true)
-    if(email != ""){
-        localStorage.setItem("email", email)
-    }
-
-    displayUsuario()
-
-    var nome = document.getElementById("login-nome-input").value = "" 
-    var email = document.getElementById("login-email-input").value = ""
-    var senha = document.getElementById("login-senha-input").value = ""
-
+    algoAberto = false
 }
-
-function sairConta(){
-    localStorage.setItem("logado", false)
-    displayUsuario()
-}
-
-function esvaziarInput(){
-    if(window.location.href == "quemSomos.html"){
-        document.getElementById("login-nome-input").value = ""
-        document.getElementById("login-email-input").value = ""
-        document.getElementById("login-senha-input").value = ""
-    }
-}
-
 // -------------------------------------------------------
-var elementoAberto = "inicio"
-
-document.body.addEventListener("keyup", (event, elemento) =>{
-    elemento = elementoAberto
-    if(event.key === "Escape" && elementoAberto == "inicio"){
-        window.location.href = "index.html"
-    } else if(event.key === "Escape" && elementoAberto != "inicio"){
-        elementoAberto.style.display = "none"
-        elementoAberto = "inicio"
+document.body.addEventListener("keyup", (event) =>{
+    if(event.key === "Escape"){
+        if(algoAberto){
+            openDiv()
+        } else{
+            window.location.href = "index.html"    
+        }
     }
 })
 // -------------------------------------------------------
 // programação referente ao contraste do site:
-var isAltoContraste = false
-
-if(localStorage.getItem("altoContraste") == "true"){
-    isAltoContraste = true
-    mudarElementosContraste()
-} else if(localStorage.getItem("altoContraste") == "false"){
-    isAltoContraste = false
-    mudarElementosContraste()
-
-} 
-
 function mudarContraste(){
-    isAltoContraste = !isAltoContraste
-    localStorage.setItem("altoContraste", isAltoContraste)
-    mudarElementosContraste()
-}
-
-function mudarElementosContraste(){
-    if(isAltoContraste == true){
+    if(config.hasHighContrast == true){
         document.documentElement.style.setProperty('--corNavEscura', "#181828")
         document.documentElement.style.setProperty('--corSemHover', "#dedeec")
         document.documentElement.style.setProperty('--corFundo', "#232333")
@@ -124,67 +77,56 @@ function mudarElementosContraste(){
         document.documentElement.style.setProperty('--corNavEscura', "#262636")
         document.documentElement.style.setProperty('--corSemHover', "#b3b3c0")
         document.documentElement.style.setProperty('--corFundo', "#333346")
-
     }
 } 
 // -------------------------------------------------------
-var divUserAberta = false
-
-function toggleDivUser(){
-    divUserAberta = !divUserAberta
-
-    if(divUserAberta == true){
-        document.getElementById("div-user").style.display = "block"
-        document.getElementById("div-user").style.right = "0px"
-    } else{
-        elementoAberto =  document.getElementById("div-user")
-        document.getElementById("div-user").style.right = "-80%"
-
-    }
-}
-
-// -------------------------------------------------------
-var blurAtivado = true
-
-if(localStorage.getItem("blurAtivado") !== null){
-    if(localStorage.getItem("blurAtivado") == "true"){
-        blurAtivado = true
-    }
-    if(localStorage.getItem("blurAtivado") == "false"){
-        blurAtivado = false
-    }
-}
-
-const backgroundConfig = document.getElementById("div-config")
-const backgroundDesejos = document.getElementById("listaDeDesejos")
-
-function toggleBlur(){
-    blurAtivado = !blurAtivado
-    mudarBlur()
-}
-
 function mudarBlur(){
-    console.log(blurAtivado)
-    if(blurAtivado == true){
-        backgroundConfig.style.backdropFilter = "blur(15px)"
-        backgroundConfig.style.backgroundColor = "var(--corFundoOpacity)"
+    if(config.hasBlur == true){
+        divConfig.style.backdropFilter = "blur(15px)"
+        divConfig.style.backgroundColor = "var(--corFundoOpacity)"
         try {
-
-            backgroundDesejos.style.backdropFilter = "blur(15px)"        
-            backgroundDesejos.style.backgroundColor = "var(--corFundoOpacity)"
+            divListaDesejos.style.backdropFilter = "blur(15px)"        
+            divListaDesejos.style.backgroundColor = "var(--corFundoOpacity)"
         } catch (TypeError){
 
         }
     } else{
-        backgroundConfig.style.backdropFilter = "blur(0px)"
-        backgroundConfig.style.backgroundColor = "var(--corFundo)"
+        divConfig.style.backdropFilter = "blur(0px)"
+        divConfig.style.backgroundColor = "var(--corFundo)"
         try {
-            backgroundDesejos.style.backdropFilter = "blur(0px)"        
-            backgroundDesejos.style.backgroundColor = "var(--corFundo)"
+            divListaDesejos.style.backdropFilter = "blur(0px)"        
+            divListaDesejos.style.backgroundColor = "var(--corFundo)"
         } catch (TypeError) {
         }
     }
-    localStorage.setItem("blurAtivado", blurAtivado)
+    localStorage.setItem("blurAtivado", config.hasBlur)
 }
 
-mudarBlur()
+//---------------------------------------------
+function mudarAnimacao(){
+    if(config.hasAnimation === true){
+        document.getElementsByClassName("slider")[0].style.animation = " 30s infinite linear normal running sliderInicio"
+    } else if(config.hasAnimation === false){
+        document.getElementsByClassName("slider")[0].style.animation = "30s infinite linear normal running none"
+    }
+}
+//---------------------------------------------
+function displayUsuario(){
+    config.loggedIn ? elNome.innerText = config.name : elNome.innerText = "Usuário";
+    (config.loggedIn && config.email != undefined) ? elEmail.innerText = config.email : elEmail.innerText = "...";
+    config.loggedIn ? elButton.innerText = "Sair" : elButton.innerText = "Logar"
+
+    if(document.getElementById("bemVindoUsuario")) document.getElementById("bemVindoUsuario").innerText = config.name 
+}
+
+function botaoSairLogar(){
+    if(config.loggedIn){
+        config.loggedIn = false
+        setLocalStorage()
+        displayUsuario()
+    } else{
+        window.location.href = "quemSomos.html"
+    }
+}
+
+displayUsuario()
