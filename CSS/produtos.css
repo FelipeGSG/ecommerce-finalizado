@@ -119,9 +119,11 @@ div[class^="container"]{
 }
 
     #popUpProduto{
+        height: 460px;
         padding: 2rem;
         border-radius: 5%;
         background-color: #262636dc;
+        backdrop-filter: blur(5px);
         display: flex;
         flex-direction: column;
     }
@@ -129,8 +131,7 @@ div[class^="container"]{
             color: aliceblue;
         }
         #popUpProduto img{
-            min-width: 400px;
-            min-height: 500px;
+            height: 470px;
             border-radius: 10px;
         }
     #container-jogo{
@@ -138,11 +139,30 @@ div[class^="container"]{
         gap: 5%;
     }
     #fechar{
-        padding: 0px ;
+        display: inline-block;
+        padding: 0px;
         margin-left: auto;
         text-align: end;
         cursor: pointer;
+        position: absolute;
+        right: 35px;
+        top: -8px;
     }
+    div#container-jogo > div {
+        height: 470px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+        #boxImgJogo{
+            background-color: rgb(0, 0, 0);
+            min-width: 340px;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+            background-position: center !important;
+            cursor: pointer;
+            transition: 0.4s;
+        }
         #comprarJogo{
             background-color: var(--corNavEscura);
             filter: brightness(1.3);
@@ -153,7 +173,6 @@ div[class^="container"]{
             font-size: 24px;
             transition: 0.4s;
             text-align: center;
-            margin-top: 100%;
             box-sizing: border-box;
         }
             #comprarJogo:hover{
@@ -213,7 +232,11 @@ div[class^="container"]{
         td div{
             display: flex;
             flex-direction: column;
-            padding: 20px;
+            padding: 0px 20px;
+            justify-content: space-between;
+        }
+        td div h2{
+            margin: 0;
         }
 
 .buttonExcluirDesejo{

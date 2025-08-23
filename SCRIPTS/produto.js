@@ -9,14 +9,28 @@ function buscar(id){
 fetch('jogos.json').then(resposta => resposta.json()).then(corpo =>{
         corpo.forEach(jogo => {
             if(id == jogo.id){
+
+                document.body.style.overflowY = "hidden"
+
                 encontrado = true
                 document.getElementById("backgroundPopUpProduto").style.display ="flex"
 
-                document.getElementById("imagemJogo").src = jogo.imagem
+                document.getElementById("boxImgJogo").style.background = `url(${jogo.imagem})`
                 document.getElementById("nomeJogo").innerHTML = jogo.nome
-                document.getElementById("dataLancamentoJogo").innerHTML = jogo.data_lancamento
-                document.getElementById("avaliacaoJogo").innerHTML = jogo.avaliacao 
-                document.getElementById("precoJogo").innerHTML = jogo.preco
+
+                if(jogo.data_lancamento != null){
+                    document.getElementById("dataLancamentoJogo").innerHTML = jogo.data_lancamento
+                    document.getElementById("avaliacaoJogo").innerHTML = jogo.avaliacao 
+                    document.getElementById("precoJogo").innerHTML = jogo.preco
+
+                    document.getElementById("comprarJogo").disabled = false
+                } else{
+                    document.getElementById("dataLancamentoJogo").innerHTML = "Data de lançamento indefinida"
+                    document.getElementById("avaliacaoJogo").innerHTML = ""
+                    document.getElementById("precoJogo").innerHTML = "--,--"
+
+                    document.getElementById("comprarJogo").disabled = true
+                }
 
                 document.getElementById("adicionarDesejo").checked = false
 
@@ -30,6 +44,14 @@ fetch('jogos.json').then(resposta => resposta.json()).then(corpo =>{
         })
     })
 }
+
+function closePopUpProduto(){
+    document.getElementById('backgroundPopUpProduto').style.display = 'none';
+    document.body.style.overflowY = "auto"
+    salvarDesejos(idJogoJson)
+}
+
+
 function comprou(){
     Swal.fire({
         title: "Compra realizada ",

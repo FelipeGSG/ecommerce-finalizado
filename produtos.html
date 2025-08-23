@@ -176,18 +176,23 @@
     <!-- tela do jogo clicado -->
     <div id="backgroundPopUpProduto">
         <div id="popUpProduto">
-            <h1 id="fechar" onclick="document.getElementById('backgroundPopUpProduto').style.display = 'none'; salvarDesejos(idJogoJson)">X</h1>
+            <h1 id="fechar" onclick="closePopUpProduto()">X</h1>
             <div id="container-jogo">
-                <img id="imagemJogo" src="" alt="">
+                <div id="boxImgJogo"></div>
+                <!-- <img id="imagemJogo" src="" alt=""> -->
                 <div>
-                    <h1 id="nomeJogo">NOME DO JOGO</h1>
-                    <span id="dataLancamentoJogo">DATA DE LANÇAMENTO &nbsp;&nbsp; &nbsp;  </span>
-                    <span id="avaliacaoJogo">AVALIAÇÃO</span> 
-                    <br><br>
-                    <h3>R$<span id="precoJogo">0</span></h3>
-                    <br>
-                    <input type="checkbox" name="listaDeDesejos" id="adicionarDesejo">
-                    <label for="">Adicionar a lista de desejos</label><br>
+                    <div>
+                        <h1 id="nomeJogo">NOME DO JOGO</h1>
+                        <span id="dataLancamentoJogo">DATA DE LANÇAMENTO &nbsp;&nbsp; &nbsp;  </span>
+                        <span id="avaliacaoJogo">AVALIAÇÃO</span> 
+                        <br><br>
+                        <h3>R$ <span id="precoJogo"></span></h3>
+                        <br>
+                        <div>
+                            <input type="checkbox" name="listaDeDesejos" id="adicionarDesejo">
+                            <label for="">Adicionar a lista de desejos</label><br>
+                        </div>
+                    </div>
                     <button id="comprarJogo" onclick="comprou()">Comprar</button>
                 </div>
             </div>

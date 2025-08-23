@@ -26,11 +26,13 @@ function criarElementoLista(id){
 
     const img = document.createElement("img")
     const div = document.createElement("div")
+    const subDiv = document.createElement("div")
     const h2 = document.createElement("h2")
     const h4 = document.createElement("h4")
     const button = document.createElement("button")
     button.innerHTML = "Excluir"
     button.classList.add("buttonExcluirDesejo")
+
     button.onclick = function deletarParentNode(){
         tr.remove()
         listaDeDesejos[id-1] = 0
@@ -41,13 +43,20 @@ function criarElementoLista(id){
                     if(jogo.id == listaDeDesejos[id-1]){
                         img.src = jogo.imagem
                         h2.innerHTML = jogo.nome
-                        h4.innerHTML = "R$"+jogo.preco
+
+                        if(jogo.data_lancamento != null){
+                            h4.innerHTML = "R$"+jogo.preco
+                        } else{
+                            h4.innerHTML = " "
+                        }
 
                         td.appendChild(img)
                         td.appendChild(div)
                         
-                        div.appendChild(h2)
-                        div.appendChild(h4)
+                        subDiv.appendChild(h2)
+                        subDiv.appendChild(h4)
+
+                        div.appendChild(subDiv)
                         div.appendChild(button)
 
                         tr.appendChild(td)
