@@ -77,7 +77,6 @@ function carregarLocalStorage(){
     for(let i = 0; i<desejos.length; i++){
         listaDeDesejos[desejos[i]-1] = parseInt(desejos[i])
     }
-    console.log(listaDeDesejos)
     salvarDesejos()
 
     for(let i= 0; i< listaDeDesejos.length; i++){

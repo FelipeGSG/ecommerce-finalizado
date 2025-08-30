@@ -11,7 +11,7 @@ let algoAberto = false
 const config = {
     loggedIn: false,
     hasHighContrast: false,
-    hasAnimation: false,
+    hasAnimation: true,
     hasBlur: true,
     name: undefined,
     email: undefined,
@@ -27,7 +27,6 @@ if(localStorage.getItem("configuracoes") != null){
 
 function setLocalStorage(){
     localStorage.setItem("configuracoes", JSON.stringify({...config}))
-    console.log(config)
 }
 
 function manageConfig(att, callback){
@@ -112,11 +111,20 @@ function mudarAnimacao(){
 }
 //---------------------------------------------
 function displayUsuario(){
-    config.loggedIn ? elNome.innerText = config.name : elNome.innerText = "Usuário";
-    (config.loggedIn && config.email != undefined) ? elEmail.innerText = config.email : elEmail.innerText = "...";
+    (config.loggedIn && config.name != undefined) ? elNome.innerText = config.name : elNome.innerText = "Usuário";
+    (config.loggedIn && config.email != undefined) ? elEmail.innerText = config.email : elEmail.innerText = "Email não definido";
     config.loggedIn ? elButton.innerText = "Sair" : elButton.innerText = "Logar"
 
-    if(document.getElementById("bemVindoUsuario")) document.getElementById("bemVindoUsuario").innerText = config.name 
+
+    if(!document.getElementById("bemVindoUsuario")) {
+        return
+    }
+    
+    if((config.loggedIn && config.name != undefined)){
+        document.getElementById("bemVindoUsuario").innerText = config.name 
+    } else{
+        document.getElementById("bemVindoUsuario").innerText = "usuário"
+    }
 }
 
 function botaoSairLogar(){

@@ -47,6 +47,13 @@ header{
     display: flex;
     box-sizing: border-box;
 }
+
+header img,
+aside img,
+footer img{
+    user-select: none;
+}
+
 .opcao{
     display: flex;
     align-items: center;
@@ -104,11 +111,18 @@ aside .iconOptionAside{
 aside .optionAside{
     padding: var(--paddingPadrao);
     border-bottom: 1px solid var(--corSemHover);
+    overflow: hidden;
     text-overflow: ellipsis;
-    white-space: none;
+    white-space: nowrap;
     text-decoration: none;
     font-size: 1em;
 }
+aside .optionAside span{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 aside .optionAside:hover{
     backdrop-filter: brightness(1.2);
 }
@@ -125,24 +139,31 @@ footer{
     justify-content: space-around;
     box-sizing: border-box;
 }
-    .desenvolvedorFooter{
-        display: flex;
-        font-size: 2rem;
-        align-items: center;
-        gap: 1rem;
-        transition: 1s;
-    }
-        .desenvolvedorFooter:hover .imgFooter{
-            fill: #262636;
-            filter: brightness(0.2) invert(13%) sepia(31%) saturate(573%) hue-rotate(202deg) contrast(91%);
-        }
-        .desenvolvedorFooter:hover p{
-            color: aliceblue;
-        }
-        .imgFooter{
-            width: 70px;
-            height: 70px;
-        }
+
+footer div h3+a{
+    text-decoration: none;
+}
+
+.desenvolvedorFooter{
+    display: flex;
+    font-size: 2rem;
+    align-items: center;
+    gap: 1rem;
+    transition: 1s;
+}
+.desenvolvedorFooter:hover .imgFooter{
+    fill: #262636;
+    filter: brightness(0.2) invert(13%) sepia(31%) saturate(573%) hue-rotate(202deg) contrast(91%);
+}
+.desenvolvedorFooter:hover p{
+    color: aliceblue;
+}
+.imgFooter{
+    width: 50px;
+    height: 50px;
+}
+
+
 
 #div-config{
     z-index: 5;

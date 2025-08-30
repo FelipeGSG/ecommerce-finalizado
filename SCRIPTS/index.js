@@ -13,13 +13,13 @@ function addCategoria(texto, e, category){
     
     const div = document.createElement("div")
     div.classList.add("escolhido")
+    div.setAttribute("onclick", `removeCategoria('${texto}', this)`)
 
     const span = document.createElement("h2")
     span.innerHTML = texto
 
     const img = document.createElement("img")
     img.src = 'IMG/delete.svg'
-    img.setAttribute("onclick", `removeCategoria('${texto}', this)`)
     img.width = '30'
 
     div.appendChild(span)
@@ -45,9 +45,10 @@ function limparCategorias(id){
 }
 
 function removeCategoria(texto, e){
-    e.parentNode.remove()
+    e.remove()
     var element = document.querySelector(`button[onclick^="addCategoria('${texto}'"]`)
     element.disabled = false
+    searchCategories()
 }
 
 async function searchCategories(){
@@ -80,8 +81,6 @@ async function searchCategories(){
 
 function loadGamesWithCategory(array){
     document.getElementById("categoriaResultados").innerText = array.length + " resultados encontrados"
-
-    //pendente para carregar cards
 }
 
 document.addEventListener("DOMContentLoaded", async() =>{
@@ -99,8 +98,6 @@ document.addEventListener("DOMContentLoaded", async() =>{
             })
         });
 
-        // console.log(plataformas, Object.keys(plataformas).length)
-        // console.log(generos, Object.keys(generos).length)
     })
 
 
